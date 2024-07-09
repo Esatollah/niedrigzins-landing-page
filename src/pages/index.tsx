@@ -1,118 +1,205 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import pic from "../../public/Image by Austin Distel.webp";
+import otherpic from "../../public/moderne Villa.webp";
+import smallpic from "../../public/Image by Douglas Sheppard.webp";
+import smolpic from "../../public/Image by Kara Eads.webp";
+import bigGrafik from "../../public/NZ Grafik Käufer.webp";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
+  const y = useTransform(scrollYProgress, [0.1, 0.33], ["0px", "150%"]);
+
+  return (
+    <div ref={ref} className="">
+      <Navbar></Navbar>
+      <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-24">
+        <h1 className="w-full text-center text-4xl md:w-3/5 md:text-6xl">
+          Immobilien günstiger kaufen
+        </h1>
+        <div className="py-4" />
+        <h3 className="w-full text-center text-lg font-light md:w-3/5">
+          Profitiere vom Niedrigzins.at Prinzip und kaufe Immobilien zu besseren
+          Konditionen als sie aktuell marktüblich sind.
+        </h3>
+      </section>
+
+      <div className="relative mb-[20%] flex justify-center md:hidden">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={smallpic}
+          alt="House"
+          className="mt-[45%] h-[20%] max-w-[30%] rounded-lg shadow-lg"
+        />
+        <div className="absolute -z-10">
+          <Image
+            src={otherpic}
+            alt="House"
+            className="mx-auto w-[50%] rounded-lg shadow-lg"
+          />
+        </div>
+        <div className="w-20" />
+        <Image
+          src={smolpic}
+          alt="House"
+          className="max-w-1/5 mt-[4.5%] h-1/5 max-w-[30%] rounded-lg shadow-lg"
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="relative mb-[20%] hidden justify-center space-x-[18%] md:flex">
+        <Image
+          src={smallpic}
+          alt="House"
+          className="mt-[6.5%] h-[20%] rounded-lg shadow-lg md:max-w-[30%] lg:max-w-[20%]"
+        />
+        <motion.div
+          className="absolute -z-10 md:left-[17.5%] md:w-[30%] lg:left-[19.5%] lg:w-1/4"
+          style={{ y }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <Image
+            src={otherpic}
+            alt="House"
+            className="rounded-lg shadow-lg md:w-[150%] lg:w-full"
+          />
+        </motion.div>
+        <Image
+          src={smolpic}
+          alt="House"
+          className="mt-[16.5%] h-[20%] rounded-lg shadow-lg md:max-w-[30%] lg:max-w-[20%]"
+        />
       </div>
-    </main>
+      <section className="container mx-auto flex flex-col items-center py-12 md:flex-row md:justify-between">
+        <div className="p-6 md:w-1/3">
+          <h1 className="mb-6 text-3xl font-extralight md:text-xl lg:text-3xl">
+            Günstiger Immobilien kaufen
+          </h1>
+          <p className="text-xl font-light md:text-xs lg:text-lg">
+            Kaufe Immobilien zu besseren Konditionen, als sie die aktuelle
+            Marktlage hergibt. Durch die Übernahme günstig finanzierter Kredite,
+            sparst du dir darüber hinaus eine Menge Geld. Einfach registrieren,
+            Daten eingeben und als verifizierter Käufer die besten Deals
+            erhalten.
+          </p>
+          <Link
+            className="text-xl font-extralight text-orange-400"
+            href={"/kaufen"}
+          >
+            zur Käufer Page
+          </Link>
+        </div>
+        <div className="w-1/3" />
+        <div className="flex-col items-center justify-center space-y-4 md:flex md:w-1/3 md:flex-row md:space-x-4 md:space-y-0">
+          <Image
+            src={pic}
+            alt="Person working"
+            className="w-full rounded-lg shadow-lg md:w-5/6"
+          />
+        </div>
+      </section>
+      <div className="md:py-8 lg:py-28 3xl:py-44" />
+      <Image
+        src={bigGrafik}
+        alt="bigGrafik"
+        className="mx-auto hidden md:block md:max-w-[80%]"
+      />
+
+      <div className="md:py-8 lg:py-28 " />
+      <div className="container mx-auto flex flex-col md:flex-row justify-end lg:space-x-64 lg:pr-40">
+        <div className="max-w-96">
+          <h2 className="text-6xl font-extralight">Verkauf</h2>
+          <div className="py-2"/>
+          <p>
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
+          </p>
+          <div className="py-2"/>
+          <Link
+            className="text-xl font-extralight text-orange-400"
+            href={"/kaufen"}
+          >
+            zur Verkäufer Page
+          </Link>
+        </div>
+        <div className="w-40 h-40 md:h-96 md:w-96 bg-red-100" />
+      </div>
+
+      <div className="md:py-8 lg:py-28 " />
+      <div className="container mx-auto flex flex-col md:flex-row justify-start lg:space-x-64 lg:pl-40">
+        <div className="h-40 w-40 md:h-96 md:w-96 bg-red-100" />
+        <div className="max-w-96">
+          <h2 className="text-6xl font-extralight">Makler</h2>
+          <div className="py-2"/>
+          <p>
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
+          </p>
+          <div className="py-2"/>
+          <Link
+            className="text-xl font-extralight text-orange-400"
+            href={"/kaufen"}
+          >
+            zur Makler Page
+          </Link>
+        </div>
+      </div>
+      <div className="md:py-28" />
+      <div className="bg-orange-50 font-light text-gray-900">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="mb-6 text-3xl">
+            Der Immobilienkauf über Niedrigzins.at kann deine monatlichen Kosten
+            um bis zu 30% senken.
+          </h2>
+          <p className="mb-12">
+            Im Rechenbeispiel werden zur Darstellung entsprechende Zahlen
+            geschätzt. Tatsächliche Werte können abweichen (auch in noch bessere
+            Konditionen).
+          </p>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold">10.000</h3>
+              <p>
+                Je nach Kredithöhe kannst du dir im Gesamtzeitraum mehrere
+                10.000€ oder sogar 100.000€ Euro an Kosten sparen und so
+                lukrative Deals holen.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold">Einfacher</h3>
+              <p>
+                Niedrigzins.at stellt die komplette Infrastruktur für die
+                Abwicklung zur Verfügung. Du brauchst dich nur registrieren,
+                verifizieren und schon kannst du mit wenigen Klicks die besten
+                Immobilieninvestments zu top Konditionen durchführen.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold">Günstiger</h3>
+              <p>
+                Kosten sparen - Einkünfte erhöhen: So einfach ist die Rechnung.
+                Spare monatlich Geld, um deine Investments profitabler vermieten
+                oder selbst nutzen zu können.{" "}
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold">-30%</h3>
+              <p>
+                Hier kannst du dein Unternehmen, deine Produkte oder Services
+                bewerben. Hilf Personen, das Unternehmen und seine Angebote
+                kennenzulernen. Lege dar, was das Unternehmen einzigartig macht
+                und wie Nutzer davon profitieren können.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
