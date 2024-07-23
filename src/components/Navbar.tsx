@@ -32,14 +32,14 @@ export default function Navbar() {
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-              Kaeufer
+              Kauf
             </Link>
             <Link
               href="/verkauf"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-              Verkaeufer
+              Verkauf
             </Link>
             <Link
               href="/makler"

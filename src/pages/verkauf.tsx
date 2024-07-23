@@ -6,7 +6,7 @@ import pic from "../../public/Image by Austin Distel.webp";
 import otherpic from "../../public/moderne Villa.webp";
 import smallpic from "../../public/Image by Douglas Sheppard.webp";
 import smolpic from "../../public/Image by Kara Eads.webp";
-import bigGrafik from "../../public/NZ Grafik Käufer.webp";
+import bigGrafik from "../../public/NZ Grafik Käufer.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
