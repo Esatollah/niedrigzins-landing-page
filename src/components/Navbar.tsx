@@ -12,15 +12,19 @@ export default function Navbar() {
     <header className="flex h-24 w-full shrink-0 items-center bg-orange-50 px-4 md:px-6">
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="lg:hidden">
+          <Button
+            variant="outline"
+            size="icon"
+            className="ml-auto bg-orange-100 hover:bg-white lg:hidden"
+          >
             <MenuIcon />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right">
-          <Link href="#" prefetch={false}>
+        <SheetContent side="right" className="bg-orange-50">
+          <Link href="/" prefetch={false}>
             <MountainIcon />
-            <span className="sr-only">Company Logo</span>
+            <span className="sr-only">Home</span>
           </Link>
           <div className="grid gap-2 py-6">
             <Link
@@ -28,35 +32,28 @@ export default function Navbar() {
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-              Home
+              Kaeufer
             </Link>
             <Link
-              href="/kaufen"
+              href="/verkauf"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-            Kauf
-            </Link>
-            <Link
-              href="/verkaufen"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-            Verkauf
+              Verkaeufer
             </Link>
             <Link
               href="/makler"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-            Makler
+              Makler
             </Link>
             <Link
               href="/contact"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
-            Kontakt
+              Kontakt
             </Link>
           </div>
         </SheetContent>
@@ -69,7 +66,7 @@ export default function Navbar() {
         <NavigationMenuList>
           <NavigationMenuLink asChild>
             <Link
-              href="/kaufen"
+              href="/"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-light transition-colors hover:bg-orange-100 hover:text-gray-900 focus:bg-orange-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
               prefetch={false}
             >
@@ -78,7 +75,7 @@ export default function Navbar() {
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
             <Link
-              href="/about"
+              href="/verkauf"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-light transition-colors hover:bg-orange-100 hover:text-gray-900 focus:bg-orange-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50"
               prefetch={false}
             >
@@ -87,7 +84,7 @@ export default function Navbar() {
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
             <Link
-              href="#"
+              href="makler"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-light transition-colors hover:bg-orange-100 hover:text-gray-900 focus:bg-orange-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-orange-100/50 data-[state=open]:bg-gray-100/50"
               prefetch={false}
             >
