@@ -98,7 +98,7 @@ export default function Home() {
         </h3>
       </section>
       <section className="flex justify-center">
-        <button className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-4xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
+        <button className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl md:text-4xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
           Immobilie finden
         </button>
       </section>
@@ -337,12 +337,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="py-8"/>
         <section className="bg-white">
-          <h2 className="mb-6 mt-12 text-center text-3xl">
+          <h2 className="mb-6 mt-12 text-center text-2xl md:text-3xl">
             Wie läuft der Kaufprozess ab?
           </h2>
+          <div className="py-4"/>
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-            <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-3 md:p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
               <CardContent className="h-full">
                 <Image
@@ -357,7 +359,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
               <CardContent className="h-full">
                 <Image
@@ -376,7 +378,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
               <CardContent className="h-full">
                 <Image

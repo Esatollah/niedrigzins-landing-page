@@ -45,14 +45,16 @@ export default function Home() {
             Verkaufen Sie Immobilien nicht unter Wert, sondern zum Wunschpreis.
           </h3>
           <div className="py-4" />
-          <button className="mx-auto w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:mx-0 md:text-xl lg:w-80">
+          <div className="flex justify-center md:justify-start">
+          <button className="w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:mx-0 md:text-xl lg:w-80">
             Immobilie verkaufen
           </button>
+          </div>
         </div>
         <Image
           src={verkaufPic}
           alt="Verkauf"
-          className="absolute left-[42%] top-16 -z-10 hidden w-[50%] md:block lg:w-[60%]"
+          className="absolute left-[43%] md:top-28 lg:top-16 -z-10 hidden md:w-[50%] md:block lg:w-[55%] rounded-lg"
         />
       </section>
 
@@ -239,10 +241,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="py-8"/>
         <section className="bg-white">
           <h2 className="mb-12 mt-12 px-8 text-center text-3xl font-bold md:text-4xl lg:ml-12 lg:text-start">
             Wie läuft der Verkaufsprozess ab?
           </h2>
+          <div className="py-4"/>
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
@@ -263,7 +267,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
               <CardContent className="h-full">
                 <Image
@@ -282,7 +286,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
               <CardContent className="h-full">
                 <Image

@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <div className="mt-12 bg-gray-50 py-6 shadow-inner">
-      <div className="mx-auto flex justify-between px-4 text-sm text-gray-400 max-w-5xl">
+    <div className="mt-12 bg-gray-50 py-6 shadow-inner px-4">
+      <h1 className="mx-auto text-xl w-[64rem] text-gray-800 ">Niedrigzins.at</h1>
+      <div className="mx-auto flex justify-between text-sm text-gray-400 max-w-5xl">
         <div>
-          <h1 className="text-xl text-gray-800">Niedrigzins.at</h1>
           <p>Endlich leistbares Zuhause</p>
-          <div className="py-4"/>
+          <div className="py-2"/>
           <p>Kontakt</p>
         </div>
           <div>
