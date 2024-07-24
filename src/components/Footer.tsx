@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div className="mt-12 bg-gray-50 py-6 shadow-inner px-4">
-      <h1 className="mx-auto text-xl w-[64rem] text-gray-800 ">Niedrigzins.at</h1>
+      <h1 className="mx-auto text-xl max-w-5xl text-gray-800 ">Niedrigzins.at</h1>
       <div className="mx-auto flex justify-between text-sm text-gray-400 max-w-5xl">
         <div>
           <p>Endlich leistbares Zuhause</p>
