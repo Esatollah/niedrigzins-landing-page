@@ -15,7 +15,7 @@ export default function Navbar() {
           <Button
             variant="outline"
             size="icon"
-            className="ml-auto bg-orange-100 hover:bg-white lg:hidden"
+            className="ml-auto bg-orange-50 hover:bg-orange-100 lg:hidden border-orange-100 shadow-orange-50 border-4 shadow-inner"
           >
             <MenuIcon />
             <span className="sr-only">Toggle navigation menu</span>
