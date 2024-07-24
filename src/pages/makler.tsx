@@ -15,6 +15,9 @@ import coinflip from "../../public/coinflip.svg";
 import cashstack from "../../public/cashstack.svg";
 import time from "../../public/time-new-svgrepo-com.svg";
 import zufrieden from "../../public/zufrieden.svg";
+import step1 from "../../public/01_Makler.jpg";
+import step2 from "../../public/02_Makler.jpg";
+import step3 from "../../public/03_Makler.jpg";
 
 export default function Home() {
   const ref = useRef(null);
@@ -168,7 +171,11 @@ export default function Home() {
           <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
             <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
             <CardContent className="h-full">
-              <div className="mb-4 h-48 w-full bg-red-500"></div>
+              <Image
+                src={step1}
+                alt="Step 1"
+                className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+              />
               <h3 className="mb-8 text-2xl font-bold">
                 Auf Niedrigzins.at registrieren
               </h3>
@@ -183,7 +190,11 @@ export default function Home() {
           <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
             <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
             <CardContent className="h-full">
-              <div className="mb-4 h-48 w-full bg-red-500"></div>
+              <Image
+                src={step2}
+                alt="Step 2"
+                className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+              />
               <h3 className="mb-8 text-2xl font-bold">
                 Maklerplatform connecten
               </h3>
@@ -198,7 +209,11 @@ export default function Home() {
           <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
             <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
             <CardContent className="h-full">
-              <div className="mb-4 h-48 w-full bg-red-500"></div>
+              <Image
+                src={step3}
+                alt="Step 3"
+                className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+              />
               <h3 className="mb-8 text-2xl font-bold">
                 Inserat via Maklerplatform veröffentlichen
               </h3>
@@ -214,11 +229,13 @@ export default function Home() {
       </section>
 
       <section className="py-36">
-        <div className="mx-auto w-[80%] rounded-3xl md:rounded-[5rem] border-4 bg-emerald-500 border-zinc-200 p-8 md:p-20 font-light">
-          <h2 className="pb-4 text-2xl md:text-4xl">Was kostet Niedrigzins.at für Makler?</h2>
+        <div className="mx-auto w-[80%] rounded-3xl border-4 border-zinc-200 bg-emerald-500 p-8 font-light md:rounded-[5rem] md:p-20">
+          <h2 className="pb-4 text-2xl md:text-4xl">
+            Was kostet Niedrigzins.at für Makler?
+          </h2>
           <div className="flex justify-between">
-          <h2 className="text-2xl lg:text-7xl">Kostenlos.</h2>
-          <h2 className="text-2xl lg:text-7xl inline ml-auto">0,00 Euro</h2>
+            <h2 className="text-2xl lg:text-7xl">Kostenlos.</h2>
+            <h2 className="ml-auto inline text-2xl lg:text-7xl">0,00 Euro</h2>
           </div>
         </div>
       </section>

@@ -23,6 +23,9 @@ import Kitzbuehel from "../../public/Kitzbuehel.jpg";
 import Salzburg from "../../public/Salzburg.jpg";
 import Wien from "../../public/Wien.jpg";
 import Linz from "../../public/Linz.jpg";
+import step1 from "../../public/01_Kauf.jpg";
+import step2 from "../../public/02_Kauf.jpg";
+import step3 from "../../public/03_Kauf.jpg";
 
 type ImmoInfo = {
   niedrigzins: number;
@@ -85,7 +88,7 @@ export default function Home() {
     <div className="">
       <Navbar></Navbar>
       <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-12">
-        <div className="bg-red-100 py-12" />
+        <div className="py-12" />
         <h1 className="w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl">
           <span className="font-bold">Endlich leistbares</span> Zuhause
         </h1>
@@ -342,7 +345,11 @@ export default function Home() {
             <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
               <CardContent className="h-full">
-                <div className="mb-4 h-48 w-full bg-red-500"></div>
+                <Image
+                  src={step1}
+                  alt="Step 1"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
                 <h3 className="mb-8 text-2xl font-light">Immobilien finden</h3>
                 <p>
                   Durchforsten Sie Niedrigzins.at Immobilienplattform und finde
@@ -353,7 +360,11 @@ export default function Home() {
             <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
               <CardContent className="h-full">
-                <div className="mb-4 h-48 w-full bg-red-500"></div>
+                <Image
+                  src={step2}
+                  alt="Step 2"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
                 <h3 className="mb-8 text-2xl font-light">
                   Registrieren und verifizieren
                 </h3>
@@ -368,7 +379,11 @@ export default function Home() {
             <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
               <CardContent className="h-full">
-                <div className="mb-4 h-48 w-full bg-red-500"></div>
+                <Image
+                  src={step3}
+                  alt="Step 3"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
                 <h3 className="mb-8 text-2xl font-light">
                   Mit wenigen Klicks kaufen
                 </h3>
