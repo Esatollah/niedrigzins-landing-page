@@ -27,6 +27,8 @@ import verkaufPic from "../../public/verkauf.jpg";
 import step1 from "../../public/01_Verkauf.jpg";
 import step2 from "../../public/02_Verkauf.jpg";
 import step3 from "../../public/03_Verkauf.jpg";
+import fast from "../../public/fast.svg";
+import easy from "../../public/easy.svg";
 
 export default function Home() {
   return (
@@ -85,9 +87,9 @@ export default function Home() {
 
             <div className="space-y-4 md:w-1/3">
               <Image
-                className="mx-auto mb-8 pr-8 pt-4"
-                src={journey}
-                alt="Journey"
+                className="mx-auto"
+                src={fast}
+                alt="Fast Icon"
                 height={100}
                 width={100}
               />
@@ -101,9 +103,9 @@ export default function Home() {
 
             <div className="space-y-4 md:w-1/3">
               <Image
-                className="mx-auto mb-8 pr-8 pt-4"
-                src={discountt}
-                alt="Discount"
+                className="mx-auto pl-4 pt-4"
+                src={easy}
+                alt="Easy Icon"
                 height={100}
                 width={100}
               />
