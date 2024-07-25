@@ -187,7 +187,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+          <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
             <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
             <CardContent className="h-full">
               <Image
@@ -206,7 +206,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card className="h-[36rem] border border-gray-700 p-5 md:w-[28rem]">
+          <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
             <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
             <CardContent className="h-full">
               <Image
