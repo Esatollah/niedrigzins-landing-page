@@ -1,20 +1,11 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import pic from "../../public/Image by Austin Distel.webp";
-import otherpic from "../../public/moderne Villa.webp";
-import smallpic from "../../public/Image by Douglas Sheppard.webp";
-import smolpic from "../../public/Image by Kara Eads.webp";
 import bigGrafik from "../../public/NZ Grafik Käufer.png";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import bill from "../../public/bill.svg";
 import journey from "../../public/journey.svg";
 import discountt from "../../public/discountt.svg";
-import discount from "../../public/discount.svg";
 import coinflip from "../../public/coinflip.svg";
 import cashstack from "../../public/cashstack.svg";
 import time from "../../public/time-new-svgrepo-com.svg";
@@ -26,6 +17,9 @@ import Linz from "../../public/Linz.jpg";
 import step1 from "../../public/01_Kauf.jpg";
 import step2 from "../../public/02_Kauf.jpg";
 import step3 from "../../public/03_Kauf.jpg";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { Slider } from "@/components/ui/slider";
 
 type ImmoInfo = {
   niedrigzins: number;
@@ -84,6 +78,9 @@ const immos: ImmoInfo[] = [
 ];
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [maxMr, setMaxMr] = useState(50);
+
   return (
     <div className="">
       <Navbar></Navbar>
@@ -98,9 +95,45 @@ export default function Home() {
         </h3>
       </section>
       <section className="flex justify-center">
-        <button className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl md:text-4xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
+        <button
+          className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+          onClick={() => setIsOpen(true)}
+        >
           Immobilie finden
         </button>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur"
+            >
+              <motion.div
+                initial={{ scale: 0, rotate: "12.5deg" }}
+                animate={{ scale: 1, rotate: "0deg" }}
+                exit={{ scale: 0, rotate: "0deg" }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-lg cursor-default overflow-hidden rounded-lg bg-orange-50 p-6 shadow-xl"
+              >
+                <div className="flex flex-col">
+                  <div className="flex flex-col">
+                    <h4>{maxMr}</h4>
+                    <Slider
+                      value={[maxMr]}
+                      onValueChange={(value) => setMaxMr(value[0])}
+                      defaultValue={[60]}
+                      step={1}
+                      max={100}
+                      className="max-w-[20rem] bg-black"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       <div className="py-10" />
@@ -337,14 +370,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="py-8"/>
+        <div className="py-8" />
         <section className="bg-white">
           <h2 className="mb-6 mt-12 text-center text-2xl md:text-3xl">
             Wie läuft der Kaufprozess ab?
           </h2>
-          <div className="py-4"/>
+          <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-            <Card className="h-[36rem] border-2 border-gray-700 p-3 md:p-5 md:w-[28rem]">
+            <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
               <CardContent className="h-full">
                 <Image
