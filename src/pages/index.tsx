@@ -20,6 +20,7 @@ import step3 from "../../public/03_Kauf.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type ImmoInfo = {
   niedrigzins: number;
@@ -117,17 +118,35 @@ export default function Home() {
                 onClick={(e) => e.stopPropagation()}
                 className="relative w-full max-w-lg cursor-default overflow-hidden rounded-lg bg-orange-50 p-6 shadow-xl"
               >
-                <div className="flex flex-col">
-                  <div className="flex flex-col">
-                    <h4>{maxMr}</h4>
+                <div className="flex justify-between">
+                  <div className="flex flex-col space-y-2">
+                    <h2 className="font-bold">Maximale Monatsrate</h2>
+                    <h4 className="w-52 bg-white text-center py-2 border border-black rounded-lg">€ {maxMr}</h4>
                     <Slider
                       value={[maxMr]}
                       onValueChange={(value) => setMaxMr(value[0])}
-                      defaultValue={[60]}
-                      step={1}
-                      max={100}
-                      className="max-w-[20rem] bg-black"
+                      defaultValue={[800]}
+                      step={50}
+                      max={5000}
+                      className="max-w-[20rem] h-2"
                     />
+                  </div>
+                  <div className="flex flex-col space-y-2">
+                    <h2 className="font-bold">Ort</h2>
+                    <Select>
+                    <SelectTrigger className="w-52 bg-white text-center py-2 border border-black rounded-lg">
+                    <SelectValue className="text-center" placeholder="Ort" defaultValue={"Wien"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="Wien">Wien</SelectItem>
+                        <SelectItem value="Graz">Graz</SelectItem>
+                        <SelectItem value="Tirol">Tirol</SelectItem>
+                        <SelectItem value="Salzburg">Salzburg</SelectItem>
+                        <SelectItem value="Linz">Linz</SelectItem>
+                        <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
+                        <SelectItem value="Innsbruck">Innsbruck</SelectItem>
+                    </SelectContent>
+                    </Select>
                   </div>
                 </div>
               </motion.div>
