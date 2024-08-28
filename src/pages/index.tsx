@@ -21,6 +21,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Reveal from "@/components/Reveal";
 
 type ImmoInfo = {
   niedrigzins: number;
@@ -88,20 +89,30 @@ export default function Home() {
       <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-12">
         <div className="py-12" />
         <h1 className="w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl">
-          <span className="font-bold">Endlich leistbares</span> Zuhause
+        <Reveal>
+          <>
+            <span className="font-bold">Endlich leistbares</span> Zuhause
+          </>
+        </Reveal>
         </h1>
         <div className="py-4" />
-        <h3 className="w-full text-center text-2xl font-extralight md:w-3/5">
+        <div className="w-full md:w-3/5">
+        <Reveal width="100%" delay={0.5}>
+        <h3 className="w-full text-center text-2xl font-extralight mx-auto">
           Kaufe dein Eigenheim mit Zinsen von nur 2% oder weniger
         </h3>
+        </Reveal>
+        </div>
       </section>
       <section className="flex justify-center">
+      <Reveal delay={0.5}>
         <button
           className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
           onClick={() => setIsOpen(true)}
         >
           Immobilie finden
         </button>
+        </Reveal>
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -156,6 +167,7 @@ export default function Home() {
       </section>
 
       <div className="py-10" />
+      <Reveal width="100%" delay={0.75}>
       <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4">
         {immos.map((immo, i) => (
           <div>
@@ -202,6 +214,7 @@ export default function Home() {
           </div>
         ))}
       </div>
+      </Reveal>
       <div className="py-20" />
 
       <div className="bg-orange-50 font-light text-gray-900">
@@ -217,7 +230,9 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col justify-center md:flex-row md:space-x-4">
-            <div className="space-y-4 md:w-1/3">
+            <div className="my-4 md:w-1/3">
+            <Reveal width="100%">
+            <>
               <Image
                 className="mx-auto"
                 src={bill}
@@ -230,9 +245,13 @@ export default function Home() {
                 10.000€ oder sogar 100.000€ Euro an Kosten sparen und so
                 lukrative Deals holen.
               </p>
+                </>
+            </Reveal>
             </div>
 
-            <div className="space-y-4 md:w-1/3">
+            <div className="md:w-1/3">
+            <Reveal delay={0.35}>
+            <>
               <Image
                 className="mx-auto mb-8 pr-8 pt-4"
                 src={journey}
@@ -246,9 +265,13 @@ export default function Home() {
                 verifizieren und schon kannst du mit wenigen Klicks die besten
                 Immobilieninvestments zu top Konditionen durchführen.
               </p>
+                </>
+                </Reveal>
             </div>
 
             <div className="space-y-4 md:w-1/3">
+            <Reveal delay={0.5}>
+            <>
               <Image
                 className="mx-auto mb-8 pr-8 pt-4"
                 src={discountt}
@@ -261,6 +284,8 @@ export default function Home() {
                 Spare monatlich Geld, um deine Investments profitabler vermieten
                 oder selbst nutzen zu können.{" "}
               </p>
+              </>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -319,11 +344,13 @@ export default function Home() {
             <div className="py-8" />
 
             <div className="lg:w-1/2">
+            <Reveal>
               <Image
                 src={bigGrafik}
                 alt="Property Image"
                 className="mb-4 rounded-lg"
               />
+              </Reveal>
             </div>
           </div>
         </div>
@@ -337,6 +364,8 @@ export default function Home() {
           <div className="py-12" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div className="space-y-4">
+            <Reveal>
+            <>
               <Image
                 src={coinflip}
                 alt="Coinflip"
@@ -352,8 +381,12 @@ export default function Home() {
                 Immobilie leichter leisten oder sogar eine größere innerhalb
                 Ihres Budgets kaufen.
               </p>
+                </>
+                </Reveal>
             </div>
             <div className="space-y-4">
+            <Reveal delay={0.35}>
+            <>
               <Image
                 src={time}
                 alt="Time Saving"
@@ -369,8 +402,12 @@ export default function Home() {
                 schnelle Abwicklungen ermöglichen unkompliziertes Investieren
                 und Wohnen in Wunschimmobilien.
               </p>
+              </>
+              </Reveal>
             </div>
             <div className="space-y-4">
+            <Reveal delay={0.5}>
+            <>
               <Image
                 src={cashstack}
                 alt="Cost Reduction"
@@ -386,6 +423,8 @@ export default function Home() {
                 Gesamtkosten. Durch das Niedrigzins.at Prinzip sparen Sie sich
                 viel Geld, das Sie anders verwenden können.
               </p>
+              </>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -396,6 +435,7 @@ export default function Home() {
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
+          <Reveal>
             <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
               <CardContent className="h-full">
@@ -411,6 +451,8 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
+            <Reveal delay={0.35}>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
               <CardContent className="h-full">
@@ -430,6 +472,8 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
+            <Reveal delay={0.5}>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
               <CardContent className="h-full">
@@ -449,6 +493,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
           </div>
         </section>
       </div>
@@ -475,9 +520,11 @@ export default function Home() {
           <p className="mb-14 text-2xl md:text-4xl">
             Registrieren Sie sich gleich!
           </p>
-          <button className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700">
-            Registrieren
-          </button>
+        <button
+          className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+        >
+        Registrieren
+        </button>
         </div>
       </div>
 
