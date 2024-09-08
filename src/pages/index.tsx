@@ -168,11 +168,11 @@ export default function Home() {
 
       <div className="py-10" />
       <Reveal width="100%" delay={0.75}>
-      <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4">
+      <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4 py-5">
         {immos.map((immo, i) => (
           <div>
-            <Card key={i} className="shadowshadow-2xl">
-              <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-xl">
+            <Card key={i} className="shadowshadow-2xl hover:scale-105 transition-all hover:cursor-pointer">
+              <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
                 {immo.img ? (
                   <Image
                     src={immo.img}

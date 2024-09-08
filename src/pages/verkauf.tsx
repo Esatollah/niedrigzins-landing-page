@@ -1,34 +1,19 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import pic from "../../public/Image by Austin Distel.webp";
-import otherpic from "../../public/moderne Villa.webp";
-import smallpic from "../../public/Image by Douglas Sheppard.webp";
-import smolpic from "../../public/Image by Kara Eads.webp";
 import bigGrafik from "../../public/NZ Grafik Verkauf.png";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import bill from "../../public/bill.svg";
-import journey from "../../public/journey.svg";
-import discountt from "../../public/discountt.svg";
-import discount from "../../public/discount.svg";
 import coinflip from "../../public/coinflip.svg";
 import cashstack from "../../public/cashstack.svg";
 import time from "../../public/time-new-svgrepo-com.svg";
-import Graz from "../../public/Graz.jpg";
-import Kitzbuehel from "../../public/Kitzbuehel.jpg";
-import Salzburg from "../../public/Salzburg.jpg";
-import Wien from "../../public/Wien.jpg";
-import Linz from "../../public/Linz.jpg";
 import verkaufPic from "../../public/verkauf.jpg";
 import step1 from "../../public/01_Verkauf.jpg";
 import step2 from "../../public/02_Verkauf.jpg";
 import step3 from "../../public/03_Verkauf.jpg";
 import fast from "../../public/fast.svg";
 import easy from "../../public/easy.svg";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
@@ -37,18 +22,22 @@ export default function Home() {
       <div className="py-20" />
       <section className="container relative mx-auto flex justify-center py-12 md:py-12">
         <div>
+        <Reveal>
           <h1 className="w-full text-center text-4xl font-bold md:w-3/5 md:text-start lg:text-8xl">
             Immobilien zum Wunschpreis verkaufen
           </h1>
+        </Reveal>
           <div className="py-4" />
           <h3 className="w-full text-center text-2xl font-extralight md:w-2/5 md:text-start">
             Verkaufen Sie Immobilien nicht unter Wert, sondern zum Wunschpreis.
           </h3>
           <div className="py-4" />
           <div className="flex justify-center md:justify-start">
+          <Reveal delay={0.7}>
           <button className="w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:mx-0 md:text-xl lg:w-80">
             Immobilie verkaufen
           </button>
+        </Reveal>
           </div>
         </div>
         <Image
@@ -58,9 +47,9 @@ export default function Home() {
         />
       </section>
 
-      <div className="py-20" />
+      <div className="py-40" />
 
-      <div className="bg-orange-50 font-light text-gray-900">
+      <div className="bg-orange-50 font-light text-gray-900 py-8">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl">
             Der Verkauf von Immobilien über Niedrigzins.at nach Ihren
@@ -68,7 +57,8 @@ export default function Home() {
           </h2>
 
           <div className="flex flex-col justify-center md:flex-row md:space-x-4">
-            <div className="md:w-1/3">
+            <Reveal width="100%">
+            <div className="w-full">
               <Image
                 className="mx-auto"
                 src={bill}
@@ -79,15 +69,16 @@ export default function Home() {
               <h1 className="text-center text-2xl font-semibold">
                 Geldbringend
               </h1>
-              <div className="py-4" />
               <p>
                 Durch das Niedrigzins.at Prinzip erhalten Sie den Wunschpreis
                 für Ihre Immobilie. Sie profitieren dabei genauso wie der
                 Käufer: eine Win-Win-Situation für jeden.
               </p>
             </div>
+            </Reveal>
 
-            <div className="space-y-4 md:w-1/3">
+            <Reveal width="100%" delay={0.3}>
+            <div className="w-full">
               <Image
                 className="mx-auto"
                 src={fast}
@@ -102,8 +93,10 @@ export default function Home() {
                 potentesten Käufern vorgeschlagen.
               </p>
             </div>
+            </Reveal>
 
-            <div className="space-y-4 md:w-1/3">
+            <Reveal width="100%" delay={0.5}>
+            <div className="w-full">
               <Image
                 className="mx-auto pl-4 pt-4"
                 src={easy}
@@ -118,6 +111,7 @@ export default function Home() {
                 Bankkontakt inklusive.
               </p>
             </div>
+            </Reveal>
           </div>
         </div>
       </div>
@@ -173,11 +167,13 @@ export default function Home() {
             <div className="py-8" />
 
             <div className="lg:w-1/2">
+              <Reveal width="fit-content" delay={0.5}>
               <Image
                 src={bigGrafik}
                 alt="Property Image"
                 className="mb-4 rounded-lg"
               />
+              </Reveal>
             </div>
           </div>
         </div>
@@ -191,6 +187,8 @@ export default function Home() {
           <div className="py-12" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div className="space-y-4">
+            <Reveal>
+            <>
               <Image
                 src={coinflip}
                 alt="Coinflip"
@@ -205,8 +203,12 @@ export default function Home() {
                 Über Niedrigzins.at können Sie problemlos Ihre Hypothek an
                 verifizierte und gecheckte Käufer weitergeben.
               </p>
+                </>
+                </Reveal>
             </div>
             <div className="space-y-4">
+            <Reveal delay={0.35}>
+            <>
               <Image
                 src={time}
                 alt="Time Saving"
@@ -222,8 +224,12 @@ export default function Home() {
                 vergeben. Einmal registriert und verifiziert können Sie
                 Immobilien via Niedrigzins.at bestmöglich verkaufen.
               </p>
+                </>
+                </Reveal>
             </div>
             <div className="space-y-4">
+            <Reveal delay={0.5}>
+            <>
               <Image
                 src={cashstack}
                 alt="Cost Reduction"
@@ -238,6 +244,8 @@ export default function Home() {
                 Durch Top Zinskonditionen können sich Käufer Ihre Immobilie
                 besser leisten und Sie kommen auf Ihre Kosten.
               </p>
+                </>
+                </Reveal>
             </div>
           </div>
         </div>
@@ -248,6 +256,7 @@ export default function Home() {
           </h2>
           <div className="py-4"/>
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
+          <Reveal>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
               <CardContent className="h-full">
@@ -267,6 +276,8 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
+            <Reveal delay={0.35}>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
               <CardContent className="h-full">
@@ -286,6 +297,8 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
+            <Reveal delay={0.5}>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
               <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
               <CardContent className="h-full">
@@ -305,6 +318,7 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+            </Reveal>
           </div>
         </section>
       </div>
@@ -328,7 +342,9 @@ export default function Home() {
           Immobilie inserieren und auf Ihre Kosten kommen!
         </h1>
         <div className="py-4" />
-        <button className="rounded bg-orange-600 px-8 py-2 text-xl font-bold text-white hover:bg-orange-700 md:text-3xl">
+        <button
+          className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+        >
           Jetzt Immobilie verkaufen
         </button>
       </div>
