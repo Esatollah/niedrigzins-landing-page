@@ -5,9 +5,10 @@ interface Props {
   children: JSX.Element;
   width?: "fit-content" | "100%";
   delay?: number;
+  className?: string;
 }
 
-const Reveal = ({ children, width = "fit-content", delay = 0.25 }: Props) => {
+const Reveal = ({ children, width = "fit-content", delay = 0.25, className }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: "some" });
 
@@ -18,7 +19,7 @@ const Reveal = ({ children, width = "fit-content", delay = 0.25 }: Props) => {
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, height: '100%' }}>
+    <div ref={ref} style={{ position: "relative", width, height: '100%' }} className={className}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 25 },

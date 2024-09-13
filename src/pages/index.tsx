@@ -20,8 +20,16 @@ import step3 from "../../public/03_Kauf.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Reveal from "@/components/Reveal";
+import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 
 type ImmoInfo = {
   niedrigzins: number;
@@ -83,137 +91,140 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [maxMr, setMaxMr] = useState(50);
 
+  const router = useRouter();
+
   return (
     <div className="">
       <Navbar></Navbar>
       <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-12">
         <div className="py-12" />
-        <h1 className="w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl">
-        <Reveal>
-          <>
-            <span className="font-bold">Endlich leistbares</span> Zuhause
-          </>
-        </Reveal>
+          <Reveal className="mx-auto" width="100%">
+        <h1 className="w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl mx-auto">
+            <>
+              <span className="font-bold">Endlich leistbares</span> Zuhause
+            </>
         </h1>
+          </Reveal>
         <div className="py-4" />
         <div className="w-full md:w-3/5">
-        <Reveal width="100%" delay={0.5}>
-        <h3 className="w-full text-center text-2xl font-extralight mx-auto">
-          Kaufe dein Eigenheim mit Zinsen von nur 2% oder weniger
-        </h3>
-        </Reveal>
+          <Reveal width="100%" delay={0.5}>
+            <h3 className="mx-auto w-full text-center text-2xl font-extralight">
+              Kaufe dein Eigenheim mit Zinsen von nur 2% oder weniger
+            </h3>
+          </Reveal>
         </div>
       </section>
       <section className="flex justify-center">
-      <Reveal delay={0.5}>
-        <button
-          className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-          onClick={() => setIsOpen(true)}
-        >
-          Immobilie finden
-        </button>
+        <Reveal delay={0.5}>
+          <button
+            className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+            onClick={() => router.push('/immo/gerasdorf')}
+          >
+            Immobilie finden
+          </button>
         </Reveal>
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur"
-            >
-              <motion.div
-                initial={{ scale: 0, rotate: "12.5deg" }}
-                animate={{ scale: 1, rotate: "0deg" }}
-                exit={{ scale: 0, rotate: "0deg" }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-lg cursor-default overflow-hidden rounded-lg bg-orange-50 p-6 shadow-xl"
-              >
-                <div className="flex justify-between">
-                  <div className="flex flex-col space-y-2">
-                    <h2 className="font-bold">Maximale Monatsrate</h2>
-                    <h4 className="w-52 bg-white text-center py-2 border border-black rounded-lg">€ {maxMr}</h4>
-                    <Slider
-                      value={[maxMr]}
-                      onValueChange={(value) => setMaxMr(value[0])}
-                      defaultValue={[800]}
-                      step={50}
-                      max={5000}
-                      className="max-w-[20rem] h-2"
-                    />
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <h2 className="font-bold">Ort</h2>
-                    <Select>
-                    <SelectTrigger className="w-52 bg-white text-center py-2 border border-black rounded-lg">
-                    <SelectValue className="text-center" placeholder="Ort" defaultValue={"Wien"} />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="Wien">Wien</SelectItem>
-                        <SelectItem value="Graz">Graz</SelectItem>
-                        <SelectItem value="Tirol">Tirol</SelectItem>
-                        <SelectItem value="Salzburg">Salzburg</SelectItem>
-                        <SelectItem value="Linz">Linz</SelectItem>
-                        <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
-                        <SelectItem value="Innsbruck">Innsbruck</SelectItem>
-                    </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </section>
+      <div className="py-10" />
+      <div className="mx-auto flex flex-col space-y-4 md:space-y-0 md:flex-row max-w-lg justify-between">
+        <div className="flex flex-col space-y-2 mx-auto">
+          <Reveal delay={0.8}>
+          <>
+          <h2 className="font-bold">Maximale Monatsrate</h2>
+          <h4 className="w-52 rounded-lg border border-black bg-white py-2 text-center">
+            € {maxMr}
+          </h4>
+          <div className="py-1" />
+          <Slider
+            value={[maxMr]}
+            onValueChange={(value) => setMaxMr(value[0])}
+            defaultValue={[800]}
+            step={50}
+            max={5000}
+            className="h-2 max-w-[13rem]"
+          />
+          </>
+          </Reveal>
+        </div>
+        <div className="flex flex-col space-y-2 mx-auto">
+          <Reveal delay={0.8}>
+          <>
+          <h2 className="font-bold">Ort</h2>
+          <Select>
+            <SelectTrigger className="w-52 rounded-lg border border-black bg-white py-2 text-center">
+              <SelectValue
+                className="text-center"
+                placeholder="Ort"
+                defaultValue={"Wien"}
+              />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Wien">Wien</SelectItem>
+              <SelectItem value="Graz">Graz</SelectItem>
+              <SelectItem value="Tirol">Tirol</SelectItem>
+              <SelectItem value="Salzburg">Salzburg</SelectItem>
+              <SelectItem value="Linz">Linz</SelectItem>
+              <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
+              <SelectItem value="Innsbruck">Innsbruck</SelectItem>
+            </SelectContent>
+          </Select>
+          <div className="py-1" />
+          <Input type="text" pattern="[0-9]{5}" placeholder="PLZ" ></Input>
+          </>
+          </Reveal>
+        </div>
+      </div>
 
       <div className="py-10" />
       <Reveal width="100%" delay={0.75}>
-      <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4 py-5">
-        {immos.map((immo, i) => (
-          <div>
-            <Card key={i} className="shadowshadow-2xl hover:scale-105 transition-all hover:cursor-pointer">
-              <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
-                {immo.img ? (
-                  <Image
-                    src={immo.img}
-                    alt={"House"}
-                    className="h-40 object-cover object-center"
-                  />
-                ) : (
-                  <div className="h-40 w-full bg-red-100 md:h-40" />
-                )}
-                <div className="flex justify-between px-6 py-4">
-                  <div>
-                    <h3 className="text-xs text-emerald-500">Niedrigzins</h3>
-                    <p className="font-bold">{immo.niedrigzins}%</p>
-                    <p className="text-xs line-through">{immo.zins}%</p>
+        <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4 py-5">
+          {immos.map((immo, i) => (
+            <div>
+              <Card
+                key={i}
+                className="shadowshadow-2xl transition-all hover:scale-105 hover:cursor-pointer"
+              >
+                <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
+                  {immo.img ? (
+                    <Image
+                      src={immo.img}
+                      alt={"House"}
+                      className="h-40 object-cover object-center"
+                    />
+                  ) : (
+                    <div className="h-40 w-full bg-red-100 md:h-40" />
+                  )}
+                  <div className="flex justify-between px-6 py-4">
+                    <div>
+                      <h3 className="text-xs text-emerald-500">Niedrigzins</h3>
+                      <p className="font-bold">{immo.niedrigzins}%</p>
+                      <p className="text-xs line-through">{immo.zins}%</p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs text-emerald-500">
+                        Monatliche Rate
+                      </h3>
+                      <p className="font-bold">
+                        {immo.mr_euro.toLocaleString("de-DE")} Euro
+                      </p>
+                      <p className="text-xs line-through">
+                        {immo.mr_euro_original.toLocaleString("de-DE")} Euro
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs text-emerald-500">
-                      Monatliche Rate
+                  <div className="border-1 absolute bottom-[30%] left-[80%] right-0 flex w-1/3 flex-col items-center justify-center overflow-visible rounded border-gray-300 bg-emerald-500 text-white shadow shadow-black">
+                    <h3 className="text-lg">
+                      -
+                      {(immo.mr_euro_original - immo.mr_euro).toLocaleString(
+                        "de-DE",
+                      )}
                     </h3>
-                    <p className="font-bold">
-                      {immo.mr_euro.toLocaleString("de-DE")} Euro
-                    </p>
-                    <p className="text-xs line-through">
-                      {immo.mr_euro_original.toLocaleString("de-DE")} Euro
-                    </p>
+                    <p className="text-center text-xs">Euro pro Monat</p>
                   </div>
-                </div>
-                <div className="border-1 absolute bottom-[30%] left-[80%] right-0 flex w-1/3 flex-col items-center justify-center overflow-visible rounded border-gray-300 bg-emerald-500 text-white shadow shadow-black">
-                  <h3 className="text-lg">
-                    -
-                    {(immo.mr_euro_original - immo.mr_euro).toLocaleString(
-                      "de-DE",
-                    )}
-                  </h3>
-                  <p className="text-center text-xs">Euro pro Monat</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
       </Reveal>
       <div className="py-20" />
 
@@ -231,60 +242,60 @@ export default function Home() {
 
           <div className="flex flex-col justify-center md:flex-row md:space-x-4">
             <div className="my-4 md:w-1/3">
-            <Reveal width="100%">
-            <>
-              <Image
-                className="mx-auto"
-                src={bill}
-                alt="Bill Icon"
-                height={100}
-                width={100}
-              />
-              <p>
-                Je nach Kredithöhe kannst du dir im Gesamtzeitraum mehrere
-                10.000€ oder sogar 100.000€ Euro an Kosten sparen und so
-                lukrative Deals holen.
-              </p>
+              <Reveal width="100%">
+                <>
+                  <Image
+                    className="mx-auto"
+                    src={bill}
+                    alt="Bill Icon"
+                    height={100}
+                    width={100}
+                  />
+                  <p>
+                    Je nach Kredithöhe kannst du dir im Gesamtzeitraum mehrere
+                    10.000€ oder sogar 100.000€ Euro an Kosten sparen und so
+                    lukrative Deals holen.
+                  </p>
                 </>
-            </Reveal>
+              </Reveal>
             </div>
 
             <div className="md:w-1/3">
-            <Reveal delay={0.35}>
-            <>
-              <Image
-                className="mx-auto mb-8 pr-8 pt-4"
-                src={journey}
-                alt="Journey"
-                height={100}
-                width={100}
-              />
-              <p>
-                Niedrigzins.at stellt die komplette Infrastruktur für die
-                Abwicklung zur Verfügung. Du brauchst dich nur registrieren,
-                verifizieren und schon kannst du mit wenigen Klicks die besten
-                Immobilieninvestments zu top Konditionen durchführen.
-              </p>
+              <Reveal delay={0.35}>
+                <>
+                  <Image
+                    className="mx-auto mb-8 pr-8 pt-4"
+                    src={journey}
+                    alt="Journey"
+                    height={100}
+                    width={100}
+                  />
+                  <p>
+                    Niedrigzins.at stellt die komplette Infrastruktur für die
+                    Abwicklung zur Verfügung. Du brauchst dich nur registrieren,
+                    verifizieren und schon kannst du mit wenigen Klicks die
+                    besten Immobilieninvestments zu top Konditionen durchführen.
+                  </p>
                 </>
-                </Reveal>
+              </Reveal>
             </div>
 
             <div className="space-y-4 md:w-1/3">
-            <Reveal delay={0.5}>
-            <>
-              <Image
-                className="mx-auto mb-8 pr-8 pt-4"
-                src={discountt}
-                alt="Discount"
-                height={100}
-                width={100}
-              />
-              <p>
-                Kosten sparen - Einkünfte erhöhen: So einfach ist die Rechnung.
-                Spare monatlich Geld, um deine Investments profitabler vermieten
-                oder selbst nutzen zu können.{" "}
-              </p>
-              </>
+              <Reveal delay={0.5}>
+                <>
+                  <Image
+                    className="mx-auto mb-8 pr-8 pt-4"
+                    src={discountt}
+                    alt="Discount"
+                    height={100}
+                    width={100}
+                  />
+                  <p>
+                    Kosten sparen - Einkünfte erhöhen: So einfach ist die
+                    Rechnung. Spare monatlich Geld, um deine Investments
+                    profitabler vermieten oder selbst nutzen zu können.{" "}
+                  </p>
+                </>
               </Reveal>
             </div>
           </div>
@@ -344,12 +355,12 @@ export default function Home() {
             <div className="py-8" />
 
             <div className="lg:w-1/2">
-            <Reveal>
-              <Image
-                src={bigGrafik}
-                alt="Property Image"
-                className="mb-4 rounded-lg"
-              />
+              <Reveal>
+                <Image
+                  src={bigGrafik}
+                  alt="Property Image"
+                  className="mb-4 rounded-lg"
+                />
               </Reveal>
             </div>
           </div>
@@ -364,135 +375,137 @@ export default function Home() {
           <div className="py-12" />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div className="space-y-4">
-            <Reveal>
-            <>
-              <Image
-                src={coinflip}
-                alt="Coinflip"
-                width={100}
-                height={100}
-                className="mx-auto"
-              />
-              <h3 className="text-center text-xl font-semibold">
-                Leistbare Immobilien
-              </h3>
-              <p>
-                Dank der niedrigeren monatlichen Kosten können Sie sich ihre
-                Immobilie leichter leisten oder sogar eine größere innerhalb
-                Ihres Budgets kaufen.
-              </p>
+              <Reveal>
+                <>
+                  <Image
+                    src={coinflip}
+                    alt="Coinflip"
+                    width={100}
+                    height={100}
+                    className="mx-auto"
+                  />
+                  <h3 className="text-center text-xl font-semibold">
+                    Leistbare Immobilien
+                  </h3>
+                  <p>
+                    Dank der niedrigeren monatlichen Kosten können Sie sich ihre
+                    Immobilie leichter leisten oder sogar eine größere innerhalb
+                    Ihres Budgets kaufen.
+                  </p>
                 </>
-                </Reveal>
-            </div>
-            <div className="space-y-4">
-            <Reveal delay={0.35}>
-            <>
-              <Image
-                src={time}
-                alt="Time Saving"
-                width={100}
-                height={100}
-                className="mx-auto"
-              />
-              <h3 className="text-center text-xl font-semibold">
-                Schnelle Abwicklung
-              </h3>
-              <p>
-                Schnell registriert, gewinnt! Die besten Immobilien und sehr
-                schnelle Abwicklungen ermöglichen unkompliziertes Investieren
-                und Wohnen in Wunschimmobilien.
-              </p>
-              </>
               </Reveal>
             </div>
             <div className="space-y-4">
-            <Reveal delay={0.5}>
-            <>
-              <Image
-                src={cashstack}
-                alt="Cost Reduction"
-                width={100}
-                height={100}
-                className="mx-auto"
-              />
-              <h3 className="text-center text-xl font-semibold">
-                Weniger Monatliche- und Gesamtkosten
-              </h3>
-              <p>
-                Geringere jährliche Zinsen führen erheblich reduzierte
-                Gesamtkosten. Durch das Niedrigzins.at Prinzip sparen Sie sich
-                viel Geld, das Sie anders verwenden können.
-              </p>
-              </>
+              <Reveal delay={0.35}>
+                <>
+                  <Image
+                    src={time}
+                    alt="Time Saving"
+                    width={100}
+                    height={100}
+                    className="mx-auto"
+                  />
+                  <h3 className="text-center text-xl font-semibold">
+                    Schnelle Abwicklung
+                  </h3>
+                  <p>
+                    Schnell registriert, gewinnt! Die besten Immobilien und sehr
+                    schnelle Abwicklungen ermöglichen unkompliziertes
+                    Investieren und Wohnen in Wunschimmobilien.
+                  </p>
+                </>
+              </Reveal>
+            </div>
+            <div className="space-y-4">
+              <Reveal delay={0.5}>
+                <>
+                  <Image
+                    src={cashstack}
+                    alt="Cost Reduction"
+                    width={100}
+                    height={100}
+                    className="mx-auto"
+                  />
+                  <h3 className="text-center text-xl font-semibold">
+                    Weniger Monatliche- und Gesamtkosten
+                  </h3>
+                  <p>
+                    Geringere jährliche Zinsen führen erheblich reduzierte
+                    Gesamtkosten. Durch das Niedrigzins.at Prinzip sparen Sie
+                    sich viel Geld, das Sie anders verwenden können.
+                  </p>
+                </>
               </Reveal>
             </div>
           </div>
         </div>
         <div className="py-8" />
-        <section className="bg-white">
+        <section className="bg-white container">
           <h2 className="mb-6 mt-12 text-center text-2xl md:text-3xl">
             Wie läuft der Kaufprozess ab?
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-          <Reveal>
-            <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
-              <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
-              <CardContent className="h-full">
-                <Image
-                  src={step1}
-                  alt="Step 1"
-                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                />
-                <h3 className="mb-8 text-2xl font-light">Immobilien finden</h3>
-                <p>
-                  Durchforsten Sie Niedrigzins.at Immobilienplattform und finde
-                  Immobilien nach deinen Vorstellungen.
-                </p>
-              </CardContent>
-            </Card>
+            <Reveal>
+              <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
+                <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+                <CardContent className="h-full">
+                  <Image
+                    src={step1}
+                    alt="Step 1"
+                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                  />
+                  <h3 className="mb-8 text-2xl font-light">
+                    Immobilien finden
+                  </h3>
+                  <p>
+                    Durchforsten Sie Niedrigzins.at Immobilienplattform und
+                    finde Immobilien nach deinen Vorstellungen.
+                  </p>
+                </CardContent>
+              </Card>
             </Reveal>
             <Reveal delay={0.35}>
-            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-              <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
-              <CardContent className="h-full">
-                <Image
-                  src={step2}
-                  alt="Step 2"
-                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                />
-                <h3 className="mb-8 text-2xl font-light">
-                  Registrieren und verifizieren
-                </h3>
-                <p>
-                  Registriere dich einmalig als Käufer. Unsere KI-gestützten
-                  Systeme validieren deine Daten und bestätigen dich als
-                  verifizierten Käufer. Dafür brauchst du keine weiteren
-                  Schritte zur Bank zu unternehmen.
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+                <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+                <CardContent className="h-full">
+                  <Image
+                    src={step2}
+                    alt="Step 2"
+                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                  />
+                  <h3 className="mb-8 text-2xl font-light">
+                    Registrieren und verifizieren
+                  </h3>
+                  <p>
+                    Registriere dich einmalig als Käufer. Unsere KI-gestützten
+                    Systeme validieren deine Daten und bestätigen dich als
+                    verifizierten Käufer. Dafür brauchst du keine weiteren
+                    Schritte zur Bank zu unternehmen.
+                  </p>
+                </CardContent>
+              </Card>
             </Reveal>
             <Reveal delay={0.5}>
-            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-              <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
-              <CardContent className="h-full">
-                <Image
-                  src={step3}
-                  alt="Step 3"
-                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                />
-                <h3 className="mb-8 text-2xl font-light">
-                  Mit wenigen Klicks kaufen
-                </h3>
-                <p>
-                  Durch die Vor-Verifizierung mit unseren System kann dir die
-                  Bank binnen kürzester Zeit dein GO für den Kauf geben und den
-                  Kauf mittels weniger Klicks abschließen. Immobilieninvestments
-                  leicht gemacht!
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+                <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+                <CardContent className="h-full">
+                  <Image
+                    src={step3}
+                    alt="Step 3"
+                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                  />
+                  <h3 className="mb-8 text-2xl font-light">
+                    Mit wenigen Klicks kaufen
+                  </h3>
+                  <p>
+                    Durch die Vor-Verifizierung mit unseren System kann dir die
+                    Bank binnen kürzester Zeit dein GO für den Kauf geben und
+                    den Kauf mittels weniger Klicks abschließen.
+                    Immobilieninvestments leicht gemacht!
+                  </p>
+                </CardContent>
+              </Card>
             </Reveal>
           </div>
         </section>
@@ -520,11 +533,9 @@ export default function Home() {
           <p className="mb-14 text-2xl md:text-4xl">
             Registrieren Sie sich gleich!
           </p>
-        <button
-          className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-        >
-        Registrieren
-        </button>
+          <button className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl">
+            Registrieren
+          </button>
         </div>
       </div>
 
