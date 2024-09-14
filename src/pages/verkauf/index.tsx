@@ -14,8 +14,10 @@ import step3 from "../../../public/03_Verkauf.jpg";
 import fast from "../../../public/fast.svg";
 import easy from "../../../public/easy.svg";
 import Reveal from "@/components/Reveal";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="">
       <Navbar></Navbar>
@@ -34,7 +36,9 @@ export default function Home() {
           <div className="py-4" />
           <div className="flex justify-center md:justify-start">
           <Reveal delay={0.7}>
-          <button className="w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:mx-0 md:text-xl lg:w-80">
+          <button className="w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:mx-0 md:text-xl lg:w-80"
+          onClick={() => {window.location.href = "/verkauf/registrieren"}}
+          >
             Immobilie verkaufen
           </button>
         </Reveal>
@@ -344,6 +348,7 @@ export default function Home() {
         <div className="py-4" />
         <button
           className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+          onClick={() => window.location.href = "/verkauf/registrieren"}
         >
           Jetzt Immobilie verkaufen
         </button>

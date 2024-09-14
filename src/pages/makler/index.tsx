@@ -35,7 +35,9 @@ export default function Home() {
           optimalen Möglichkeiten dazu.
         </h3>
         <div className="py-4" />
-        <button className="mx-auto w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none lg:mx-0 lg:w-80 lg:text-4xl">
+        <button className="mx-auto w-60 rounded-2xl border-2 border-dashed border-black bg-green-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none lg:mx-0 lg:w-80 lg:text-4xl"
+        onClick={() => window.location.href = "/makler/registrieren"}
+        >
           Loslegen
         </button>
         <div className="py-40 lg:py-80" />
@@ -238,7 +240,9 @@ export default function Home() {
         <h1 className="mx-auto mb-4 max-w-screen-lg text-center text-4xl font-semibold lg:text-8xl">
           Jetzt Inserat über Ihr Maklertool bei Niedrigzins.at inserieren
         </h1>
-        <button className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700">
+        <button className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700"
+        onClick={() => window.location.href = "/makler/registrieren"}
+        >
           Loslegen
         </button>
       </div>

@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import bigGrafik from "../../public/NZ Grafik Käufer.png";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import bill from "../../public/bill.svg";
-import journey from "../../public/journey.svg";
-import discountt from "../../public/discountt.svg";
-import coinflip from "../../public/coinflip.svg";
-import cashstack from "../../public/cashstack.svg";
-import time from "../../public/time-new-svgrepo-com.svg";
-import Graz from "../../public/Graz.jpg";
-import Kitzbuehel from "../../public/Kitzbuehel.jpg";
-import Salzburg from "../../public/Salzburg.jpg";
-import Wien from "../../public/Wien.jpg";
-import Linz from "../../public/Linz.jpg";
-import step1 from "../../public/01_Kauf.jpg";
-import step2 from "../../public/02_Kauf.jpg";
-import step3 from "../../public/03_Kauf.jpg";
+import bigGrafik from "../../../public/NZ Grafik Käufer.png";
+import bill from "../../../public/bill.svg";
+import journey from "../../../public/journey.svg";
+import discountt from "../../../public/discountt.svg";
+import coinflip from "../../../public/coinflip.svg";
+import cashstack from "../../../public/cashstack.svg";
+import time from "../../../public/time-new-svgrepo-com.svg";
+import Graz from "../../../public/Graz.jpg";
+import Kitzbuehel from "../../../public/Kitzbuehel.jpg";
+import Salzburg from "../../../public/Salzburg.jpg";
+import Wien from "../../../public/Wien.jpg";
+import Linz from "../../../public/Linz.jpg";
+import step1 from "../../../public/01_Kauf.jpg";
+import step2 from "../../../public/02_Kauf.jpg";
+import step3 from "../../../public/03_Kauf.jpg";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -532,9 +532,7 @@ export default function Home() {
           <p className="mb-14 text-2xl md:text-4xl">
             Registrieren Sie sich gleich!
           </p>
-          <button className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-          onClick={() => window.location.href="/kauf/registrieren"}
-          >
+          <button className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl">
             Registrieren
           </button>
         </div>
