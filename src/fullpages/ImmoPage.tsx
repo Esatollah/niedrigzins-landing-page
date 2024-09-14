@@ -9,6 +9,7 @@ interface ImmoPageProps {
   details: Record<string, string>;
   aufteilung: Record<string, number>;
   punktet_mit: string[];
+  punktet_mit_text?: string;
   extended_description?: string;
   plz: string;
   ort: string;
@@ -96,6 +97,7 @@ export default function ImmoPage(props: ImmoPageProps) {
               <li>{punkt}</li>
             ))}
           </ul>
+          <p>{props.punktet_mit_text}</p>
 
           <div className="py-4" />
           <h2 className="max-w-2xl text-xl font-bold">

@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import bigGrafik from "../../public/NZ Grafik Verkauf.png";
+import bigGrafik from "../../../public/NZ Grafik Verkauf.png";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import bill from "../../public/bill.svg";
-import coinflip from "../../public/coinflip.svg";
-import cashstack from "../../public/cashstack.svg";
-import time from "../../public/time-new-svgrepo-com.svg";
-import verkaufPic from "../../public/verkauf.jpg";
-import step1 from "../../public/01_Verkauf.jpg";
-import step2 from "../../public/02_Verkauf.jpg";
-import step3 from "../../public/03_Verkauf.jpg";
-import fast from "../../public/fast.svg";
-import easy from "../../public/easy.svg";
+import bill from "../../../public/bill.svg";
+import coinflip from "../../../public/coinflip.svg";
+import cashstack from "../../../public/cashstack.svg";
+import time from "../../../public/time-new-svgrepo-com.svg";
+import verkaufPic from "../../../public/verkauf.jpg";
+import step1 from "../../../public/01_Verkauf.jpg";
+import step2 from "../../../public/02_Verkauf.jpg";
+import step3 from "../../../public/03_Verkauf.jpg";
+import fast from "../../../public/fast.svg";
+import easy from "../../../public/easy.svg";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {

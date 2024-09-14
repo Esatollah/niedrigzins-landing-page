@@ -17,7 +17,6 @@ import Linz from "../../public/Linz.jpg";
 import step1 from "../../public/01_Kauf.jpg";
 import step2 from "../../public/02_Kauf.jpg";
 import step3 from "../../public/03_Kauf.jpg";
-import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -168,7 +167,7 @@ export default function Home() {
             </SelectContent>
           </Select>
           <div className="py-1" />
-          <Input type="text" pattern="[0-9]{5}" placeholder="PLZ" ></Input>
+          <Input type="tel" maxLength={5} pattern="[0-9]{5}" placeholder="PLZ" ></Input>
           </>
           </Reveal>
         </div>
@@ -178,10 +177,10 @@ export default function Home() {
       <Reveal width="100%" delay={0.75}>
         <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4 py-5">
           {immos.map((immo, i) => (
-            <div>
+            <div className="cursor-pointer">
               <Card
                 key={i}
-                className="shadowshadow-2xl transition-all hover:scale-105 hover:cursor-pointer"
+                className="shadowshadow-2xl transition-all hover:scale-105" onClick={() => router.push(`/immo/${immo.ort?.toLowerCase()}`)}
               >
                 <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
                   {immo.img ? (

@@ -48,13 +48,6 @@ export default function Navbar() {
             >
               Makler
             </Link>
-            <Link
-              href="/contact"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Kontakt
-            </Link>
           </div>
         </SheetContent>
       </Sheet>
@@ -84,7 +77,7 @@ export default function Navbar() {
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
             <Link
-              href="makler"
+              href="/makler"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-light transition-colors hover:bg-orange-100 hover:text-gray-900 focus:bg-orange-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-orange-100/50 data-[state=open]:bg-gray-100/50"
               prefetch={false}
             >

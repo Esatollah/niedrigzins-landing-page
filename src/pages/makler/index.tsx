@@ -1,23 +1,17 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import pic from "../../public/Image by Austin Distel.webp";
-import otherpic from "../../public/moderne Villa.webp";
-import smallpic from "../../public/Image by Douglas Sheppard.webp";
-import smolpic from "../../public/Image by Kara Eads.webp";
-import bigGrafik from "../../public/NZ Grafik Makler.png";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import coinflip from "../../public/coinflip.svg";
-import cashstack from "../../public/cashstack.svg";
-import time from "../../public/time-new-svgrepo-com.svg";
-import zufrieden from "../../public/zufrieden.svg";
-import step1 from "../../public/01_Makler.jpg";
-import step2 from "../../public/02_Makler.jpg";
-import step3 from "../../public/03_Makler.jpg";
+import bigGrafik from "../../../public/NZ Grafik Makler.png";
+import coinflip from "../../../public/coinflip.svg";
+import cashstack from "../../../public/cashstack.svg";
+import time from "../../../public/time-new-svgrepo-com.svg";
+import zufrieden from "../../../public/zufrieden.svg";
+import step1 from "../../../public/01_Makler.jpg";
+import step2 from "../../../public/02_Makler.jpg";
+import step3 from "../../../public/03_Makler.jpg";
 
 export default function Home() {
   const ref = useRef(null);
