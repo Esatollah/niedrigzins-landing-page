@@ -8,7 +8,12 @@ interface Props {
   className?: string;
 }
 
-const Reveal = ({ children, width = "fit-content", delay = 0.25, className }: Props) => {
+const Reveal = ({
+  children,
+  width = "fit-content",
+  delay = 0.25,
+  className,
+}: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: "some" });
 
@@ -19,7 +24,11 @@ const Reveal = ({ children, width = "fit-content", delay = 0.25, className }: Pr
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, height: '100%' }} className={className}>
+    <div
+      ref={ref}
+      style={{ position: "relative", width, height: "100%" }}
+      className={className}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 25 },
@@ -39,4 +48,3 @@ const Reveal = ({ children, width = "fit-content", delay = 0.25, className }: Pr
 };
 
 export default Reveal;
-

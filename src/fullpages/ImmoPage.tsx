@@ -105,39 +105,41 @@ export default function ImmoPage(props: ImmoPageProps) {
           </h2>
           <div className="py-2" />
           <div className="pl-8">
-          {
-            Object.entries(props.austattung_eigenschaften).map(([key, value]) => (
-              <div>
-                <p className="max-w-2xl"><span className="font-bold">{key}</span>: {value}</p>
-              </div>
-            ))
-          }
+            {Object.entries(props.austattung_eigenschaften).map(
+              ([key, value]) => (
+                <div>
+                  <p className="max-w-2xl">
+                    <span className="font-bold">{key}</span>: {value}
+                  </p>
+                </div>
+              ),
+            )}
 
-          <div className="py-4" />
-          <h2 className="max-w-2xl font-bold">Flächen</h2>
-          <ul>
-            {Object.entries(props.flaechen).map(([key, value]) => (
-              <li>
-                {key}: {value}m²
-              </li>
-            ))}
-          </ul>
+            <div className="py-4" />
+            <h2 className="max-w-2xl font-bold">Flächen</h2>
+            <ul>
+              {Object.entries(props.flaechen).map(([key, value]) => (
+                <li>
+                  {key}: {value}m²
+                </li>
+              ))}
+            </ul>
 
-          <div className="py-4" />
-          <h2 className="max-w-2xl font-bold">Aufteilung</h2>
-          <ul>
-            {Object.entries(props.aufteilung).map(([key, value]) => (
-              <li>
-                {key}: {value}m²
-              </li>
-            ))}
-          </ul>
-        </div>
+            <div className="py-4" />
+            <h2 className="max-w-2xl font-bold">Aufteilung</h2>
+            <ul>
+              {Object.entries(props.aufteilung).map(([key, value]) => (
+                <li>
+                  {key}: {value}m²
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="">
           <div className="flex h-fit flex-col rounded-3xl bg-orange-50 px-5 py-10">
-            <div className="py-5"/>
+            <div className="py-5" />
             <div className="flex justify-between">
               <div>
                 <h3 className="font-bold">Kaufpreis</h3>
@@ -148,12 +150,12 @@ export default function ImmoPage(props: ImmoPageProps) {
                 <p>{props.eigenmittel.toLocaleString("de-De")} Euro</p>
               </div>
             </div>
-            <div className="py-2"/>
+            <div className="py-2" />
             <div>
               <h3 className="font-bold">Kreditsumme</h3>
               <p>{props.kreditsumme.toLocaleString("de-De")} Euro</p>
             </div>
-            <div className="py-2"/>
+            <div className="py-2" />
             <div className="flex justify-between">
               <div>
                 <h3 className="font-bold">Zinssatz</h3>
@@ -167,7 +169,7 @@ export default function ImmoPage(props: ImmoPageProps) {
                 <p>3,6%</p>
               </div>
             </div>
-            <div className="py-2"/>
+            <div className="py-2" />
             <div className="flex justify-between">
               <div className="w-1/2">
                 <h3 className="font-bold">Monatliche Kreditrate</h3>
@@ -181,9 +183,9 @@ export default function ImmoPage(props: ImmoPageProps) {
                 <p>3,6%</p>
               </div>
             </div>
-            <div className="py-1"/>
+            <div className="py-1" />
             <h3 className="font-bold text-emerald-500">Monatliche Ersparnis</h3>
-            <div className="py-1"/>
+            <div className="py-1" />
             <p className="rounded-2xl bg-emerald-500 py-4 text-center text-2xl font-extrabold text-white transition-all hover:scale-105">
               -
               {(props.vergleichsrate - props.monatliche_rate).toLocaleString(
@@ -199,10 +201,10 @@ export default function ImmoPage(props: ImmoPageProps) {
               ))}
             </ul>
           </div>
-          <div className="py-4"/>
+          <div className="py-4" />
           <div className="flex h-fit flex-col rounded-3xl bg-orange-50 p-5">
             <h2 className="text-xl font-bold">Anbieter</h2>
-            <h3 className="font-bold text-sm">{props.anbieter}</h3>
+            <h3 className="text-sm font-bold">{props.anbieter}</h3>
             <p>{props.anbieter_ort}</p>
           </div>
         </div>

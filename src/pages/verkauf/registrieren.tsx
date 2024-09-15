@@ -21,8 +21,11 @@ export default function Page() {
       <Script
         id="tally-js"
         src="https://tally.so/widgets/embed.js"
+        strategy="lazyOnload"
         onLoad={() => {
-          Tally.loadEmbeds();
+          if (window.Tally) {
+            window.Tally.loadEmbeds();
+          }
         }}
       />
       <Footer />

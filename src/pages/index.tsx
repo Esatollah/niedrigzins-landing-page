@@ -97,13 +97,13 @@ export default function Home() {
       <Navbar></Navbar>
       <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-12">
         <div className="py-12" />
-          <Reveal className="mx-auto" width="100%">
-        <h1 className="w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl mx-auto">
+        <Reveal className="mx-auto" width="100%">
+          <h1 className="mx-auto w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl">
             <>
               <span className="font-bold">Endlich leistbares</span> Zuhause
             </>
-        </h1>
-          </Reveal>
+          </h1>
+        </Reveal>
         <div className="py-4" />
         <div className="w-full md:w-3/5">
           <Reveal width="100%" delay={0.5}>
@@ -117,58 +117,63 @@ export default function Home() {
         <Reveal delay={0.5}>
           <button
             className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-            onClick={() => router.push('/immo/gerasdorf')}
+            onClick={() => router.push("/immo/gerasdorf")}
           >
             Immobilie finden
           </button>
         </Reveal>
       </section>
       <div className="py-10" />
-      <div className="mx-auto flex flex-col space-y-4 md:space-y-0 md:flex-row max-w-lg justify-between">
-        <div className="flex flex-col space-y-2 mx-auto">
+      <div className="mx-auto flex max-w-lg flex-col justify-between space-y-4 md:flex-row md:space-y-0">
+        <div className="mx-auto flex flex-col space-y-2">
           <Reveal delay={0.8}>
-          <>
-          <h2 className="font-bold">Maximale Monatsrate</h2>
-          <h4 className="w-52 rounded-lg border border-black bg-white py-2 text-center">
-            € {maxMr}
-          </h4>
-          <div className="py-1" />
-          <Slider
-            value={[maxMr]}
-            onValueChange={(value) => setMaxMr(value[0])}
-            defaultValue={[800]}
-            step={50}
-            max={5000}
-            className="h-2 max-w-[13rem]"
-          />
-          </>
+            <>
+              <h2 className="font-bold">Maximale Monatsrate</h2>
+              <h4 className="w-52 rounded-lg border border-black bg-white py-2 text-center">
+                € {maxMr}
+              </h4>
+              <div className="py-1" />
+              <Slider
+                value={[maxMr]}
+                onValueChange={(value) => setMaxMr(value[0])}
+                defaultValue={[800]}
+                step={50}
+                max={5000}
+                className="h-2 max-w-[13rem]"
+              />
+            </>
           </Reveal>
         </div>
-        <div className="flex flex-col space-y-2 mx-auto">
+        <div className="mx-auto flex flex-col space-y-2">
           <Reveal delay={0.8}>
-          <>
-          <h2 className="font-bold">Ort</h2>
-          <Select>
-            <SelectTrigger className="w-52 rounded-lg border border-black bg-white py-2 text-center">
-              <SelectValue
-                className="text-center"
-                placeholder="Ort"
-                defaultValue={"Wien"}
-              />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Wien">Wien</SelectItem>
-              <SelectItem value="Graz">Graz</SelectItem>
-              <SelectItem value="Tirol">Tirol</SelectItem>
-              <SelectItem value="Salzburg">Salzburg</SelectItem>
-              <SelectItem value="Linz">Linz</SelectItem>
-              <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
-              <SelectItem value="Innsbruck">Innsbruck</SelectItem>
-            </SelectContent>
-          </Select>
-          <div className="py-1" />
-          <Input type="tel" maxLength={5} pattern="[0-9]{5}" placeholder="PLZ" ></Input>
-          </>
+            <>
+              <h2 className="font-bold">Ort</h2>
+              <Select>
+                <SelectTrigger className="w-52 rounded-lg border border-black bg-white py-2 text-center">
+                  <SelectValue
+                    className="text-center"
+                    placeholder="Ort"
+                    defaultValue={"Wien"}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Wien">Wien</SelectItem>
+                  <SelectItem value="Graz">Graz</SelectItem>
+                  <SelectItem value="Tirol">Tirol</SelectItem>
+                  <SelectItem value="Salzburg">Salzburg</SelectItem>
+                  <SelectItem value="Linz">Linz</SelectItem>
+                  <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
+                  <SelectItem value="Innsbruck">Innsbruck</SelectItem>
+                </SelectContent>
+              </Select>
+              <div className="py-1" />
+              <Input
+                type="tel"
+                maxLength={5}
+                pattern="[0-9]{5}"
+                placeholder="PLZ"
+              ></Input>
+            </>
           </Reveal>
         </div>
       </div>
@@ -180,7 +185,8 @@ export default function Home() {
             <div className="cursor-pointer">
               <Card
                 key={i}
-                className="shadowshadow-2xl transition-all hover:scale-105" onClick={() => router.push(`/immo/${immo.ort?.toLowerCase()}`)}
+                className="shadowshadow-2xl transition-all hover:scale-105"
+                onClick={() => router.push(`/immo/${immo.ort?.toLowerCase()}`)}
               >
                 <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
                   {immo.img ? (
@@ -439,7 +445,7 @@ export default function Home() {
           </div>
         </div>
         <div className="py-8" />
-        <section className="bg-white container">
+        <section className="container bg-white">
           <h2 className="mb-6 mt-12 text-center text-2xl md:text-3xl">
             Wie läuft der Kaufprozess ab?
           </h2>
@@ -532,8 +538,9 @@ export default function Home() {
           <p className="mb-14 text-2xl md:text-4xl">
             Registrieren Sie sich gleich!
           </p>
-          <button className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-          onClick={() => window.location.href="/kauf/registrieren"}
+          <button
+            className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
+            onClick={() => (window.location.href = "/kauf/registrieren")}
           >
             Registrieren
           </button>
