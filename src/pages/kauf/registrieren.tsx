@@ -23,7 +23,9 @@ export default function Page() {
         src="https://tally.so/widgets/embed.js"
         strategy="lazyOnload"
         onLoad={() => {
+          //@ts-expect-error
           if (window.Tally) {
+            //@ts-expect-error
             window.Tally.loadEmbeds();
           }
         }}
