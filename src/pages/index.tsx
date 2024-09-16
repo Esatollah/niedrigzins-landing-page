@@ -117,7 +117,7 @@ export default function Home() {
         <Reveal delay={0.5}>
           <button
             className="rounded-2xl border-2 border-dashed border-black bg-emerald-500 px-14 py-3 text-2xl font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
-            onClick={() => router.push("/immo/gerasdorf")}
+            onClick={() => (window.location.href = "/kauf/registrieren")}
           >
             Immobilie finden
           </button>
@@ -158,12 +158,14 @@ export default function Home() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="Wien">Wien</SelectItem>
-                  <SelectItem value="Graz">Graz</SelectItem>
-                  <SelectItem value="Tirol">Tirol</SelectItem>
+                  <SelectItem value="Steiermark">Steiermark</SelectItem>
+                  <SelectItem value="Kärnten">Kärnten</SelectItem>
                   <SelectItem value="Salzburg">Salzburg</SelectItem>
-                  <SelectItem value="Linz">Linz</SelectItem>
-                  <SelectItem value="Klagenfurt">Klagenfurt</SelectItem>
-                  <SelectItem value="Innsbruck">Innsbruck</SelectItem>
+                  <SelectItem value="Tirol">Tirol</SelectItem>
+                  <SelectItem value="Oberösterreich">Oberösterreich</SelectItem>
+                  <SelectItem value="Niederösterreich">Niederösterreich</SelectItem>
+                  <SelectItem value="Burgenland">Burgenland</SelectItem>
+                  <SelectItem value="Vorarlberg">Vorarlberg</SelectItem>
                 </SelectContent>
               </Select>
               <div className="py-1" />
