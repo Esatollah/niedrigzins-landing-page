@@ -37,10 +37,21 @@ type ImmoInfo = {
   zins: number;
   img?: any;
   ort?: string;
-  bundesland?: string;
+  bundesland: string;
+  plz: number;
 };
 
 const immos: ImmoInfo[] = [
+  {
+    niedrigzins: 2.03,
+    mr_euro: 3310,
+    zins: 3.6,
+    mr_euro_original: 4008.11,
+    ort: "Gerasdorf",
+    img: Salzburg,
+    bundesland: "Gerasdorf",
+    plz: 2201,
+  },
   {
     niedrigzins: 1.8,
     mr_euro: 1560,
@@ -49,15 +60,7 @@ const immos: ImmoInfo[] = [
     ort: "Graz",
     bundesland: "Steiermark",
     img: Graz,
-  },
-  {
-    niedrigzins: 2.2,
-    mr_euro: 4170,
-    zins: 3.8,
-    mr_euro_original: 6300,
-    ort: "Kitzbühel",
-    bundesland: "Tirol",
-    img: Kitzbuehel,
+    plz: 8020,
   },
   {
     niedrigzins: 1.7,
@@ -67,14 +70,7 @@ const immos: ImmoInfo[] = [
     ort: "Linz",
     bundesland: "Oberösterreich",
     img: Linz,
-  },
-  {
-    niedrigzins: 2.6,
-    mr_euro: 3310,
-    zins: 3.3,
-    mr_euro_original: 4350,
-    ort: "Salzburg",
-    img: Salzburg,
+    plz: 4020,
   },
   {
     niedrigzins: 1.5,
@@ -83,12 +79,16 @@ const immos: ImmoInfo[] = [
     mr_euro_original: 3600,
     ort: "Wien",
     img: Wien,
+    bundesland: "Wien",
+    plz: 1210,
   },
 ];
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [maxMr, setMaxMr] = useState(50);
+  const [maxMr, setMaxMr] = useState(5000);
+
+  const [selectedImmo, setSelectedImmo] = useState<ImmoInfo | null>(null);
 
   const router = useRouter();
 
@@ -136,7 +136,7 @@ export default function Home() {
               <Slider
                 value={[maxMr]}
                 onValueChange={(value) => setMaxMr(value[0])}
-                defaultValue={[800]}
+                defaultValue={[5000]}
                 step={50}
                 max={5000}
                 className="h-2 max-w-[13rem]"
@@ -148,24 +148,24 @@ export default function Home() {
           <Reveal delay={0.8}>
             <>
               <h2 className="font-bold">Ort</h2>
-              <Select>
+              <Select
+                onValueChange={(v) => {
+                  if (v !== "any") setSelectedImmo(JSON.parse(v));
+                  else setSelectedImmo(null);
+                }}
+              >
                 <SelectTrigger className="w-52 rounded-lg border border-black bg-white py-2 text-center">
-                  <SelectValue
-                    className="text-center"
-                    placeholder="Ort"
-                    defaultValue={"Wien"}
-                  />
+                  <SelectValue className="text-center" placeholder="Ort" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="Wien">Wien</SelectItem>
-                  <SelectItem value="Steiermark">Steiermark</SelectItem>
-                  <SelectItem value="Kärnten">Kärnten</SelectItem>
-                  <SelectItem value="Salzburg">Salzburg</SelectItem>
-                  <SelectItem value="Tirol">Tirol</SelectItem>
-                  <SelectItem value="Oberösterreich">Oberösterreich</SelectItem>
-                  <SelectItem value="Niederösterreich">Niederösterreich</SelectItem>
-                  <SelectItem value="Burgenland">Burgenland</SelectItem>
-                  <SelectItem value="Vorarlberg">Vorarlberg</SelectItem>
+                  {immos.map((x) => {
+                    return (
+                      <SelectItem value={JSON.stringify(x)}>
+                        {x.bundesland}
+                      </SelectItem>
+                    );
+                  })}
+                  <SelectItem value="any" className="h-8"></SelectItem>
                 </SelectContent>
               </Select>
               <div className="py-1" />
@@ -174,6 +174,8 @@ export default function Home() {
                 maxLength={5}
                 pattern="[0-9]{5}"
                 placeholder="PLZ"
+                value={selectedImmo?.plz || ""}
+                disabled
               ></Input>
             </>
           </Reveal>
@@ -182,55 +184,66 @@ export default function Home() {
 
       <div className="py-10" />
       <Reveal width="100%" delay={0.75}>
-        <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-between space-x-12 overflow-x-auto px-4 py-5">
-          {immos.map((immo, i) => (
-            <div className="cursor-pointer">
-              <Card
-                key={i}
-                className="shadowshadow-2xl transition-all hover:scale-105"
-                onClick={() => router.push(`/immo/${immo.ort?.toLowerCase()}`)}
-              >
-                <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
-                  {immo.img ? (
-                    <Image
-                      src={immo.img}
-                      alt={"House"}
-                      className="h-40 object-cover object-center"
-                    />
-                  ) : (
-                    <div className="h-40 w-full bg-red-100 md:h-40" />
-                  )}
-                  <div className="flex justify-between px-6 py-4">
-                    <div>
-                      <h3 className="text-xs text-emerald-500">Niedrigzins</h3>
-                      <p className="font-bold">{immo.niedrigzins}%</p>
-                      <p className="text-xs line-through">{immo.zins}%</p>
+        <div className="no-scrollbar mx-auto flex max-w-screen-2xl justify-center space-x-12 overflow-x-auto px-4 py-5 transition-all">
+          {immos
+            .filter((x) => {
+              if (selectedImmo && selectedImmo.bundesland !== x.bundesland)
+                return false;
+
+              return x.mr_euro < maxMr;
+            })
+            .map((immo, i) => (
+              <div className="cursor-pointer">
+                <Card
+                  key={i}
+                  className="shadowshadow-2xl transition-all hover:scale-105"
+                  onClick={() =>
+                    router.push(`/immo/${immo.ort?.toLowerCase()}`)
+                  }
+                >
+                  <CardContent className="relative w-64 rounded border-2 border-gray-300 p-0 shadow-lg">
+                    {immo.img ? (
+                      <Image
+                        src={immo.img}
+                        alt={"House"}
+                        className="h-40 object-cover object-center"
+                      />
+                    ) : (
+                      <div className="h-40 w-full bg-red-100 md:h-40" />
+                    )}
+                    <div className="flex justify-between px-6 py-4">
+                      <div>
+                        <h3 className="text-xs text-emerald-500">
+                          Niedrigzins
+                        </h3>
+                        <p className="font-bold">{immo.niedrigzins}%</p>
+                        <p className="text-xs line-through">{immo.zins}%</p>
+                      </div>
+                      <div>
+                        <h3 className="text-xs text-emerald-500">
+                          Monatliche Rate
+                        </h3>
+                        <p className="font-bold">
+                          {immo.mr_euro.toLocaleString("de-DE")} Euro
+                        </p>
+                        <p className="text-xs line-through">
+                          {immo.mr_euro_original.toLocaleString("de-DE")} Euro
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xs text-emerald-500">
-                        Monatliche Rate
+                    <div className="border-1 absolute bottom-[30%] left-[80%] right-0 flex w-1/3 flex-col items-center justify-center overflow-visible rounded border-gray-300 bg-emerald-500 text-white shadow shadow-black">
+                      <h3 className="text-lg">
+                        -
+                        {(immo.mr_euro_original - immo.mr_euro).toLocaleString(
+                          "de-DE",
+                        )}
                       </h3>
-                      <p className="font-bold">
-                        {immo.mr_euro.toLocaleString("de-DE")} Euro
-                      </p>
-                      <p className="text-xs line-through">
-                        {immo.mr_euro_original.toLocaleString("de-DE")} Euro
-                      </p>
+                      <p className="text-center text-xs">Euro pro Monat</p>
                     </div>
-                  </div>
-                  <div className="border-1 absolute bottom-[30%] left-[80%] right-0 flex w-1/3 flex-col items-center justify-center overflow-visible rounded border-gray-300 bg-emerald-500 text-white shadow shadow-black">
-                    <h3 className="text-lg">
-                      -
-                      {(immo.mr_euro_original - immo.mr_euro).toLocaleString(
-                        "de-DE",
-                      )}
-                    </h3>
-                    <p className="text-center text-xs">Euro pro Monat</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
         </div>
       </Reveal>
       <div className="py-20" />

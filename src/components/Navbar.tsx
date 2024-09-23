@@ -6,6 +6,8 @@ import {
   NavigationMenuList,
   NavigationMenuLink,
 } from "./ui/navigation-menu";
+import logo from "../../public/Logo.jpeg"
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -52,10 +54,9 @@ export default function Navbar() {
         </SheetContent>
       </Sheet>
       <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
-        <MountainIcon />
-        <span className="sr-only">Company Logo</span>
+        <Image src={logo} alt="Logo" className="h-16 w-auto rounded-lg shadow-sm shadow-orange-50"/>
       </Link>
-      <NavigationMenu className="hidden lg:flex">
+      <NavigationMenu className="hidden ml-auto lg:flex">
         <NavigationMenuList>
           <NavigationMenuLink asChild>
             <Link
