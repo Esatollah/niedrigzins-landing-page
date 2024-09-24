@@ -11,13 +11,13 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="flex h-24 w-full shrink-0 items-center bg-orange-50 px-4 md:px-6">
+    <header className="flex h-24 w-full shrink-0 items-center bg-[#faf3eb] px-4 md:px-6">
       <Sheet>
         <SheetTrigger asChild>
           <Button
             variant="outline"
             size="icon"
-            className="ml-auto border-4 border-orange-100 bg-orange-50 shadow-inner shadow-orange-50 hover:bg-orange-100 lg:hidden"
+            className="ml-auto border-none bg-orange-50 shadow-inner shadow-orange-50 hover:bg-orange-100 lg:hidden"
           >
             <MenuIcon />
             <span className="sr-only">Toggle navigation menu</span>
@@ -54,7 +54,7 @@ export default function Navbar() {
         </SheetContent>
       </Sheet>
       <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
-        <Image src={logo} alt="Logo" className="h-16 w-auto rounded-lg shadow-sm shadow-orange-50"/>
+        <Image src={logo} alt="Logo" className="h-16 w-auto rounded-lg "/>
       </Link>
       <NavigationMenu className="hidden ml-auto lg:flex">
         <NavigationMenuList>
