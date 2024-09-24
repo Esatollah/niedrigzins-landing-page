@@ -8,7 +8,7 @@ export default function Page() {
     <div>
       <Navbar />
       <ImmoPage
-        images={[""]}
+        images={["/wien1.jpg", "/wien2.jpg", "/wien3.jpg", "/wien4.jpg"]}
         title="Luxuriöses Eigentumswohnung in Wien"
         plz="1030"
         ort="Wien"

@@ -1,5 +1,14 @@
+import { SwipeCarousel } from "@/components/ImageCarousel";
 import Navbar from "@/components/Navbar";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import React from "react";
+import Autoplay from "embla-carousel-autoplay"
 
 interface ImmoPageProps {
   images: string[];
@@ -33,7 +42,30 @@ interface ImmoPageProps {
 export default function ImmoPage(props: ImmoPageProps) {
   return (
     <div className="container flex flex-col items-center">
-      <div>thing</div>
+      <Carousel 
+      plugins={[
+        Autoplay({
+          delay: 8000
+        })
+      ]}
+      className="py-4 w-4/5">
+        <CarouselContent className="">
+        {props.images.map((img) => (
+          <CarouselItem className="cursor-grab w-full">
+              <div
+                style={{
+                  backgroundImage: `url(${img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                className="aspect-video w-full rounded-xl bg-neutral-800 object-cover"
+              ></div>
+          </CarouselItem>
+        ))}
+        </CarouselContent>
+        <CarouselPrevious className="z-10"/>
+        <CarouselNext className="z-10"/>
+      </Carousel>
       <div className="flex max-w-6xl flex-col-reverse md:flex-row md:justify-between md:space-x-8">
         <div className="flex flex-col md:w-2/3">
           <h1 className="max-w-2xl text-4xl font-bold lg:text-6xl">

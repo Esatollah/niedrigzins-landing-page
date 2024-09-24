@@ -263,7 +263,6 @@ export default function Home() {
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-            <Reveal>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
                 <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
                 <CardContent className="h-full">
@@ -283,8 +282,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
-            <Reveal delay={0.35}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
                 <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
                 <CardContent className="h-full">
@@ -304,8 +301,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
-            <Reveal delay={0.5}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
                 <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
                 <CardContent className="h-full">
@@ -325,7 +320,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
           </div>
         </section>
       </div>

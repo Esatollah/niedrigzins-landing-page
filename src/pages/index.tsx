@@ -10,8 +10,7 @@ import coinflip from "../../public/coinflip.svg";
 import cashstack from "../../public/cashstack.svg";
 import time from "../../public/time-new-svgrepo-com.svg";
 import Graz from "../../public/Graz.jpg";
-import Kitzbuehel from "../../public/Kitzbuehel.jpg";
-import Salzburg from "../../public/Salzburg.jpg";
+import Gerasdorf1 from "../../public/gerasdorf1.jpg"
 import Wien from "../../public/Wien.jpg";
 import Linz from "../../public/Linz.jpg";
 import step1 from "../../public/01_Kauf.jpg";
@@ -48,7 +47,7 @@ const immos: ImmoInfo[] = [
     zins: 3.6,
     mr_euro_original: 4008.11,
     ort: "Gerasdorf",
-    img: Salzburg,
+    img: Gerasdorf1,
     bundesland: "Gerasdorf",
     plz: 2201,
   },
@@ -158,6 +157,7 @@ export default function Home() {
                   <SelectValue className="text-center" placeholder="Ort" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="any" className="h-8"></SelectItem>
                   {immos.map((x) => {
                     return (
                       <SelectItem value={JSON.stringify(x)}>
@@ -165,7 +165,6 @@ export default function Home() {
                       </SelectItem>
                     );
                   })}
-                  <SelectItem value="any" className="h-8"></SelectItem>
                 </SelectContent>
               </Select>
               <div className="py-1" />
@@ -466,7 +465,6 @@ export default function Home() {
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-            <Reveal>
               <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
                 <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
                 <CardContent className="h-full">
@@ -484,8 +482,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
-            <Reveal delay={0.35}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
                 <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
                 <CardContent className="h-full">
@@ -505,8 +501,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
-            <Reveal delay={0.5}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
                 <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
                 <CardContent className="h-full">
@@ -526,7 +520,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </Reveal>
           </div>
         </section>
       </div>

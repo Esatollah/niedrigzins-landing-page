@@ -8,7 +8,7 @@ export default function Page() {
     <div>
       <Navbar />
       <ImmoPage
-        images={[""]}
+        images={["/Graz.jpg", "/Graztwo.jpg", "/Grazthree.jpg"]}
         title="Modernes Einfamilienhaus in Graz"
         plz="8020"
         ort="Graz"
