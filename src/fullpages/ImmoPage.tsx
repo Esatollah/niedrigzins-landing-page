@@ -1,5 +1,3 @@
-import { SwipeCarousel } from "@/components/ImageCarousel";
-import Navbar from "@/components/Navbar";
 import {
   Carousel,
   CarouselContent,
