@@ -50,8 +50,8 @@ export default function ImmoPage(props: ImmoPageProps) {
       ]}
       className="py-4 w-4/5">
         <CarouselContent className="">
-        {props.images.map((img) => (
-          <CarouselItem className="cursor-grab w-full">
+        {props.images.map((img, idx) => (
+          <CarouselItem className="cursor-grab w-full" key={idx}>
               <div
                 style={{
                   backgroundImage: `url(${img})`,
