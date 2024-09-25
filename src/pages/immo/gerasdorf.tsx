@@ -8,7 +8,14 @@ export default function Page() {
     <div>
       <Navbar />
       <ImmoPage
-        images={["/gerasdorf1.jpg", "/gerasdorf2.jpg", "/gerasdorf3.jpg", "/gerasdorf4.jpg", "/gerasdorf5.jpg", "/gerasdorf6.jpg"]}
+        images={[
+          "/gerasdorf1.jpg",
+          "/gerasdorf2.jpg",
+          "/gerasdorf3.jpg",
+          "/gerasdorf4.jpg",
+          "/gerasdorf5.jpg",
+          "/gerasdorf6.jpg",
+        ]}
         title="Elegante Stadtvilla kurz vor Fertigstellung"
         plz="2201"
         ort="Gerasdorf"

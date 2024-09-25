@@ -245,7 +245,7 @@ export default function Home() {
           className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700"
           onClick={() => (window.location.href = "/makler/einreichung")}
         >
-        Jetzt Immobilie über Niedrigzins inserieren
+          Jetzt Immobilie über Niedrigzins inserieren
         </button>
       </div>
 

@@ -263,63 +263,63 @@ export default function Home() {
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step1}
-                    alt="Step 1"
-                    className="my-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-bold">
-                    Auf Niedrigzins.at registrieren
-                  </h3>
-                  <p>
-                    Zur Nutzung des Portals ist eine einmalige Registrierung
-                    erforderlich. Kosten entstehen Ihnen dabei keine. Einmal
-                    registriert können Sie die vollen Funktionen von
-                    Niedrigzins.at nutzen.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step2}
-                    alt="Step 2"
-                    className="my-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-bold">
-                    Einfach Inserat erstellen
-                  </h3>
-                  <p>
-                    Durch einfache und unkomplizierte Eingabemasken lassen sich
-                    Inserate im Handumdrehen erstellen. Nach einem Check durch
-                    Niedrigzins.at wird Ihr Inserat freigegeben und steht für
-                    Käufer zur Verfügung.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step3}
-                    alt="Step 3"
-                    className="my-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-bold">
-                    Verifizierte Käufer erhalten Immobilien-Vorschlag
-                  </h3>
-                  <p>
-                    Verifizierte Käufer erhalten auf Basis ihrer Profile
-                    zielgenaue Immobilienvorschläge. Dadurch wird ein "perfektes
-                    Match" gefunden, was die Kaufabwicklung einfacher und
-                    schneller macht.
-                  </p>
-                </CardContent>
-              </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+              <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step1}
+                  alt="Step 1"
+                  className="my-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-bold">
+                  Auf Niedrigzins.at registrieren
+                </h3>
+                <p>
+                  Zur Nutzung des Portals ist eine einmalige Registrierung
+                  erforderlich. Kosten entstehen Ihnen dabei keine. Einmal
+                  registriert können Sie die vollen Funktionen von
+                  Niedrigzins.at nutzen.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+              <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step2}
+                  alt="Step 2"
+                  className="my-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-bold">
+                  Einfach Inserat erstellen
+                </h3>
+                <p>
+                  Durch einfache und unkomplizierte Eingabemasken lassen sich
+                  Inserate im Handumdrehen erstellen. Nach einem Check durch
+                  Niedrigzins.at wird Ihr Inserat freigegeben und steht für
+                  Käufer zur Verfügung.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+              <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step3}
+                  alt="Step 3"
+                  className="my-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-bold">
+                  Verifizierte Käufer erhalten Immobilien-Vorschlag
+                </h3>
+                <p>
+                  Verifizierte Käufer erhalten auf Basis ihrer Profile
+                  zielgenaue Immobilienvorschläge. Dadurch wird ein "perfektes
+                  Match" gefunden, was die Kaufabwicklung einfacher und
+                  schneller macht.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

@@ -10,7 +10,7 @@ import coinflip from "../../public/coinflip.svg";
 import cashstack from "../../public/cashstack.svg";
 import time from "../../public/time-new-svgrepo-com.svg";
 import Graz from "../../public/Graz.jpg";
-import Gerasdorf1 from "../../public/gerasdorf1.jpg"
+import Gerasdorf1 from "../../public/gerasdorf1.jpg";
 import Wien from "../../public/Wien.jpg";
 import Linz from "../../public/Linz.jpg";
 import step1 from "../../public/01_Kauf.jpg";
@@ -465,61 +465,59 @@ export default function Home() {
           </h2>
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
-              <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
-                <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step1}
-                    alt="Step 1"
-                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-light">
-                    Immobilien finden
-                  </h3>
-                  <p>
-                    Durchforsten Sie Niedrigzins.at Immobilienplattform und
-                    finde Immobilien nach deinen Vorstellungen.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step2}
-                    alt="Step 2"
-                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-light">
-                    Registrieren und verifizieren
-                  </h3>
-                  <p>
-                    Registriere dich einmalig als Käufer. Unsere KI-gestützten
-                    Systeme validieren deine Daten und bestätigen dich als
-                    verifizierten Käufer. Dafür brauchst du keine weiteren
-                    Schritte zur Bank zu unternehmen.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
-                <CardContent className="h-full">
-                  <Image
-                    src={step3}
-                    alt="Step 3"
-                    className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
-                  />
-                  <h3 className="mb-8 text-2xl font-light">
-                    Mit wenigen Klicks kaufen
-                  </h3>
-                  <p>
-                    Durch die Vor-Verifizierung mit unseren System kann dir die
-                    Bank binnen kürzester Zeit dein GO für den Kauf geben und
-                    den Kauf mittels weniger Klicks abschließen.
-                    Immobilieninvestments leicht gemacht!
-                  </p>
-                </CardContent>
-              </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
+              <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step1}
+                  alt="Step 1"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-light">Immobilien finden</h3>
+                <p>
+                  Durchforsten Sie Niedrigzins.at Immobilienplattform und finde
+                  Immobilien nach deinen Vorstellungen.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+              <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step2}
+                  alt="Step 2"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-light">
+                  Registrieren und verifizieren
+                </h3>
+                <p>
+                  Registriere dich einmalig als Käufer. Unsere KI-gestützten
+                  Systeme validieren deine Daten und bestätigen dich als
+                  verifizierten Käufer. Dafür brauchst du keine weiteren
+                  Schritte zur Bank zu unternehmen.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
+              <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+              <CardContent className="h-full">
+                <Image
+                  src={step3}
+                  alt="Step 3"
+                  className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
+                />
+                <h3 className="mb-8 text-2xl font-light">
+                  Mit wenigen Klicks kaufen
+                </h3>
+                <p>
+                  Durch die Vor-Verifizierung mit unseren System kann dir die
+                  Bank binnen kürzester Zeit dein GO für den Kauf geben und den
+                  Kauf mittels weniger Klicks abschließen. Immobilieninvestments
+                  leicht gemacht!
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

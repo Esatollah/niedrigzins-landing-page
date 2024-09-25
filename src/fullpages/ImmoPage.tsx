@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import React from "react";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 
 interface ImmoPageProps {
   images: string[];
@@ -40,16 +40,17 @@ interface ImmoPageProps {
 export default function ImmoPage(props: ImmoPageProps) {
   return (
     <div className="container flex flex-col items-center">
-      <Carousel 
-      plugins={[
-        Autoplay({
-          delay: 8000
-        })
-      ]}
-      className="py-4 w-4/5">
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 8000,
+          }),
+        ]}
+        className="w-4/5 py-4"
+      >
         <CarouselContent className="">
-        {props.images.map((img, idx) => (
-          <CarouselItem className="cursor-grab w-full" key={idx}>
+          {props.images.map((img, idx) => (
+            <CarouselItem className="w-full cursor-grab" key={idx}>
               <div
                 style={{
                   backgroundImage: `url(${img})`,
@@ -58,11 +59,11 @@ export default function ImmoPage(props: ImmoPageProps) {
                 }}
                 className="aspect-video w-full rounded-xl bg-neutral-800 object-cover"
               ></div>
-          </CarouselItem>
-        ))}
+            </CarouselItem>
+          ))}
         </CarouselContent>
-        <CarouselPrevious className="z-10"/>
-        <CarouselNext className="z-10"/>
+        <CarouselPrevious className="z-10" />
+        <CarouselNext className="z-10" />
       </Carousel>
       <div className="flex max-w-6xl flex-col-reverse md:flex-row md:justify-between md:space-x-8">
         <div className="flex flex-col md:w-2/3">

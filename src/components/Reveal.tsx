@@ -26,7 +26,7 @@ const Reveal = ({
   return (
     <div
       ref={ref}
-      style={{ position: "relative",  height: "100%" }}
+      style={{ position: "relative", height: "100%" }}
       className={className}
     >
       <motion.div
