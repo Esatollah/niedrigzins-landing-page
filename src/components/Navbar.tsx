@@ -54,6 +54,14 @@ export default function Navbar() {
             >
               Makler
             </Link>
+            <Link
+              href="https://www.niedrigzins.immo"
+              target="_blank"
+              className="bg-transparent hover:bg-emerald-500 text-emerald-700 font-semibold hover:text-white py-2 px-4 border border-emerald-500 hover:border-transparent rounded transition-all w-20"
+              prefetch={false}
+            >
+            Login
+            </Link>
           </div>
         </SheetContent>
       </Sheet>
@@ -87,6 +95,16 @@ export default function Navbar() {
               prefetch={false}
             >
               Makler
+            </Link>
+          </NavigationMenuLink>
+          <NavigationMenuLink asChild>
+            <Link
+              href="https://www.niedrigzins.immo"
+              target="_blank"
+              className="bg-transparent hover:bg-emerald-500 text-emerald-700 font-semibold hover:text-white py-2 px-4 border border-emerald-500 hover:border-transparent rounded transition-all"
+              prefetch={false}
+            >
+            Login
             </Link>
           </NavigationMenuLink>
         </NavigationMenuList>

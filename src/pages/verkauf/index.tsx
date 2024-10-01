@@ -30,7 +30,7 @@ export default function Home() {
             </h1>
           </Reveal>
           <div className="py-4" />
-          <h3 className="w-full text-center text-2xl font-extralight md:w-2/5 md:text-start">
+          <h3 className="w-full text-center text-2xl md:w-2/5 md:text-start">
             Verkaufen Sie Immobilien nicht unter Wert, sondern zum Wunschpreis.
           </h3>
           <div className="py-4" />
@@ -56,7 +56,7 @@ export default function Home() {
 
       <div className="py-40" />
 
-      <div className="bg-orange-50 py-8 font-light text-gray-900">
+      <div className="bg-orange-50 py-8 text-gray-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl">
             Der Verkauf von Immobilien über Niedrigzins.at nach Ihren
@@ -122,7 +122,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="min-h-[90vh] font-light text-gray-900">
+      <div className="min-h-[90vh] text-gray-900">
         <div className="mx-auto max-w-7xl px-4 py-60 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">
             <div className="lg:w-1/2">
@@ -186,7 +186,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="font-light text-gray-900">
+      <div className="text-gray-900">
         <div className="mx-auto bg-orange-50 px-4 py-32 sm:px-6 lg:px-40">
           <h2 className="mb-6 text-center text-3xl font-semibold text-orange-600 md:text-start md:text-5xl">
             Ihre Vorteile durch Niedrigzins.at
@@ -264,7 +264,7 @@ export default function Home() {
           <div className="py-4" />
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-              <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+              <CardTitle className="mb-4">Schritt 1</CardTitle>
               <CardContent className="h-full">
                 <Image
                   src={step1}
@@ -283,7 +283,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-              <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+              <CardTitle className="mb-4">Schritt 2</CardTitle>
               <CardContent className="h-full">
                 <Image
                   src={step2}
@@ -302,7 +302,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-              <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+              <CardTitle className="mb-4">Schritt 3</CardTitle>
               <CardContent className="h-full">
                 <Image
                   src={step3}
@@ -324,7 +324,7 @@ export default function Home() {
         </section>
       </div>
       <section className="py-36">
-        <div className="mx-auto w-[80%] rounded-3xl border-4 border-emerald-500 bg-zinc-200 p-8 font-light">
+        <div className="mx-auto w-[80%] rounded-3xl border-4 border-emerald-500 bg-zinc-200 p-8">
           <h2 className="pb-4 text-4xl">Was kostet dich Niedrigzins.at?</h2>
           <h2 className="text-4xl">Kostenlos.</h2>
           <p className="pb-8 text-lg">

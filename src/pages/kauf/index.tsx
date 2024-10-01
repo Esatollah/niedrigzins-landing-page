@@ -98,7 +98,7 @@ export default function Home() {
       <section className="container mx-auto flex flex-col items-center justify-center py-12 md:py-12">
         <div className="py-12" />
         <Reveal className="mx-auto" width="100%">
-          <h1 className="mx-auto w-full text-center text-4xl font-extralight md:w-3/5 md:text-8xl">
+          <h1 className="mx-auto w-full text-center text-4xl md:w-3/5 md:text-8xl">
             <>
               <span className="font-bold">Endlich leistbares</span> Zuhause
             </>
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="py-4" />
         <div className="w-full md:w-3/5">
           <Reveal width="100%" delay={0.5}>
-            <h3 className="mx-auto w-full text-center text-2xl font-extralight">
+            <h3 className="mx-auto w-full text-center text-2xl">
               Kaufe dein Eigenheim mit Zinsen von nur 2% oder weniger
             </h3>
           </Reveal>
@@ -233,7 +233,7 @@ export default function Home() {
       </Reveal>
       <div className="py-20" />
 
-      <div className="bg-orange-50 font-light text-gray-900">
+      <div className="bg-orange-50 text-gray-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl">
             Der Immobilienkauf über Niedrigzins.at kann deine monatlichen Kosten
@@ -306,7 +306,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="min-h-[90vh] font-light text-gray-900">
+      <div className="min-h-[90vh] text-gray-900">
         <div className="mx-auto max-w-7xl px-4 py-60 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">
             <div className="lg:w-1/2">
@@ -372,7 +372,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="font-light text-gray-900">
+      <div className="text-gray-900">
         <div className="mx-auto bg-orange-50 px-4 py-32 sm:px-6 lg:px-40">
           <h2 className="mb-6 text-5xl font-semibold text-orange-600">
             Ihre Vorteile durch Niedrigzins.at
@@ -453,14 +453,14 @@ export default function Home() {
           <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
             <Reveal>
               <Card className="h-[36rem] border-2 border-gray-700 p-3 md:w-[28rem] md:p-5">
-                <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+                <CardTitle className="mb-4">Schritt 1</CardTitle>
                 <CardContent className="h-full">
                   <Image
                     src={step1}
                     alt="Step 1"
                     className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
                   />
-                  <h3 className="mb-8 text-2xl font-light">
+                  <h3 className="mb-8 text-2xl">
                     Immobilien finden
                   </h3>
                   <p>
@@ -472,14 +472,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.35}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+                <CardTitle className="mb-4">Schritt 2</CardTitle>
                 <CardContent className="h-full">
                   <Image
                     src={step2}
                     alt="Step 2"
                     className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
                   />
-                  <h3 className="mb-8 text-2xl font-light">
+                  <h3 className="mb-8 text-2xl">
                     Registrieren und verifizieren
                   </h3>
                   <p>
@@ -493,14 +493,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.5}>
               <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-                <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+                <CardTitle className="mb-4">Schritt 3</CardTitle>
                 <CardContent className="h-full">
                   <Image
                     src={step3}
                     alt="Step 3"
                     className="my-4 mb-4 h-48 w-full rounded-lg object-cover"
                   />
-                  <h3 className="mb-8 text-2xl font-light">
+                  <h3 className="mb-8 text-2xl">
                     Mit wenigen Klicks kaufen
                   </h3>
                   <p>
@@ -516,7 +516,7 @@ export default function Home() {
         </section>
       </div>
       <section className="py-36">
-        <div className="mx-auto w-[80%] rounded-3xl border-4 border-emerald-500 bg-zinc-200 p-8 font-light">
+        <div className="mx-auto w-[80%] rounded-3xl border-4 border-emerald-500 bg-zinc-200 p-8">
           <h2 className="pb-4 text-4xl">Was kostet dich Niedrigzins.at?</h2>
           <h2 className="text-4xl">Kostenlos.</h2>
           <p className="pb-8 text-lg">
@@ -530,7 +530,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="font-light">
+      <div className="">
         <div className="container mx-auto px-4 py-12 text-center">
           <h1 className="mb-4 text-4xl font-semibold md:text-8xl">
             Leistbare Immobilien sind schnell weg!

@@ -209,7 +209,7 @@ export default function ImmoPage(props: ImmoPageProps) {
               <div>
                 <h3 className="max-w-36 text-wrap text-sm font-semibold text-gray-400">
                   Vergleichsrate
-                  <br /> <span className="font-light">bei aktuellem Zins</span>
+                  <br /> <span className="">bei aktuellem Zins</span>
                 </h3>
                 <p>3,6%</p>
               </div>

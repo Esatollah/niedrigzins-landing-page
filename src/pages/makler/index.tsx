@@ -30,7 +30,7 @@ export default function Home() {
           Immobilien schneller vermitteln
         </h1>
         <div className="py-4" />
-        <h3 className="w-full text-center text-2xl font-extralight md:text-start lg:w-2/5">
+        <h3 className="w-full text-center text-2xl md:text-start lg:w-2/5">
           Wertvolle Immobilien sind heiß begehrt. Niedrigzins.at gibt Ihnen die
           optimalen Möglichkeiten dazu.
         </h3>
@@ -166,7 +166,7 @@ export default function Home() {
         </h2>
         <div className="mx-4 flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
           <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-            <CardTitle className="mb-4 font-light">Schritt 1</CardTitle>
+            <CardTitle className="mb-4">Schritt 1</CardTitle>
             <CardContent className="h-full">
               <Image
                 src={step1}
@@ -185,7 +185,7 @@ export default function Home() {
             </CardContent>
           </Card>
           <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-            <CardTitle className="mb-4 font-light">Schritt 2</CardTitle>
+            <CardTitle className="mb-4">Schritt 2</CardTitle>
             <CardContent className="h-full">
               <Image
                 src={step2}
@@ -204,7 +204,7 @@ export default function Home() {
             </CardContent>
           </Card>
           <Card className="h-[36rem] border-2 border-gray-700 p-5 md:w-[28rem]">
-            <CardTitle className="mb-4 font-light">Schritt 3</CardTitle>
+            <CardTitle className="mb-4">Schritt 3</CardTitle>
             <CardContent className="h-full">
               <Image
                 src={step3}
@@ -226,7 +226,7 @@ export default function Home() {
       </section>
 
       <section className="py-36">
-        <div className="mx-auto w-[80%] rounded-3xl border-4 border-zinc-200 bg-emerald-500 p-8 font-light md:rounded-[5rem] md:p-20">
+        <div className="mx-auto w-[80%] rounded-3xl border-4 border-zinc-200 bg-emerald-500 p-8 md:rounded-[5rem] md:p-20">
           <h2 className="pb-4 text-2xl md:text-4xl">
             Was kostet Niedrigzins.at für Makler?
           </h2>
@@ -237,15 +237,15 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-40 text-center font-light">
+      <div className="container mx-auto px-4 py-40 text-center">
         <h1 className="mx-auto mb-4 max-w-screen-lg text-center text-4xl font-semibold lg:text-8xl">
-          Jetzt Inserat über Ihr Maklertool bei Niedrigzins.at inserieren
+          Jetzt Immobilie über Niedrigzins inserieren
         </h1>
         <button
           className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700"
           onClick={() => (window.location.href = "/makler/einreichung")}
         >
-          Jetzt Immobilie über Niedrigzins inserieren
+          Jetzt inserieren
         </button>
       </div>
 
