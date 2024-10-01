@@ -5,7 +5,7 @@ export default function Footer() {
         Niedrigzins © 2024
       </h1>
       <h2 className="mx-auto flex max-w-5xl justify-between">
-        Datenschutz | Kontakt | AGB | Datenschutz & Cookies
+        Datenschutz | Kontakt | AGB | Cookies
       </h2>
     </div>
   );

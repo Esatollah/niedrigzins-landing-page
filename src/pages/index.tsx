@@ -107,7 +107,7 @@ export default function Home() {
         <div className="w-full md:w-3/5">
           <Reveal width="100%" delay={0.5}>
             <h3 className="mx-auto w-full text-center text-2xl">
-              Kaufe dein Eigenheim mit Zinsen von nur 2% oder weniger
+              Kaufen Sie Ihr Eigenheim mit Zinsen von nur 2% oder weniger
             </h3>
           </Reveal>
         </div>
@@ -250,7 +250,7 @@ export default function Home() {
       <div className="bg-orange-50 text-gray-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl">
-            Der Immobilienkauf über Niedrigzins.at kann deine monatlichen Kosten
+            Der Immobilienkauf über Niedrigzins.at kann Ihre monatlichen Kosten
             um bis zu 30% senken.
           </h2>
           <p className="mb-12">
@@ -271,7 +271,7 @@ export default function Home() {
                     width={100}
                   />
                   <p>
-                    Je nach Kredithöhe kannst du dir im Gesamtzeitraum mehrere
+                    Je nach Kredithöhe können Sie im Gesamtzeitraum mehrere
                     10.000€ oder sogar 100.000€ Euro an Kosten sparen und so
                     lukrative Deals holen.
                   </p>
@@ -291,8 +291,8 @@ export default function Home() {
                   />
                   <p>
                     Niedrigzins.at stellt die komplette Infrastruktur für die
-                    Abwicklung zur Verfügung. Du brauchst dich nur registrieren,
-                    verifizieren und schon kannst du mit wenigen Klicks die
+                    Abwicklung zur Verfügung. Sie brauchen sich nur registrieren,
+                    verifizieren und schon können Sie mit wenigen Klicks die
                     besten Immobilieninvestments zu top Konditionen durchführen.
                   </p>
                 </>
@@ -311,8 +311,8 @@ export default function Home() {
                   />
                   <p>
                     Kosten sparen - Einkünfte erhöhen: So einfach ist die
-                    Rechnung. Spare monatlich Geld, um deine Investments
-                    profitabler vermieten oder selbst nutzen zu können.{" "}
+                    Rechnung. Sparen Sie monatlich Geld, um Ihre Investments
+                    profitabler vermieten oder selbst nutzen zu können.
                   </p>
                 </>
               </Reveal>
@@ -343,7 +343,7 @@ export default function Home() {
                   <p className="w-3/4">
                     Aufgrund der geringeren monatlichen Belastung durch die
                     Übernahme günstiger Kredite, können Sie sich Ihre Immobilie
-                    besser leisten, oder sogar eine größere mit ihrem Budget
+                    besser leisten, oder sogar eine größere mit Ihrem Budget
                     kaufen.
                   </p>
                 </div>
@@ -407,7 +407,7 @@ export default function Home() {
                     Leistbare Immobilien
                   </h3>
                   <p>
-                    Dank der niedrigeren monatlichen Kosten können Sie sich ihre
+                    Dank der niedrigeren monatlichen Kosten können Sie sich Ihre
                     Immobilie leichter leisten oder sogar eine größere innerhalb
                     Ihres Budgets kaufen.
                   </p>
@@ -517,10 +517,10 @@ export default function Home() {
       </div>
       <section className="py-36">
         <div className="mx-auto w-[80%] rounded-3xl border-4 border-emerald-500 bg-zinc-200 p-8">
-          <h2 className="pb-4 text-4xl">Was kostet dich Niedrigzins.at?</h2>
+          <h2 className="pb-4 text-4xl">Was kostet Sie Niedrigzins.at?</h2>
           <h2 className="text-4xl">Kostenlos.</h2>
           <p className="pb-8 text-lg">
-            Die reine Nutzung des Portals ist für dich komplett kostenlos.
+            Die reine Nutzung des Portals ist für Sie komplett kostenlos.
           </p>
           <h2 className="text-4xl">1% vom Kauf der Immobilie</h2>
           <p className="text-lg">
@@ -551,3 +551,4 @@ export default function Home() {
     </div>
   );
 }
+
