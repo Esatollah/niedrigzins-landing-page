@@ -8,7 +8,7 @@ export default function Page() {
       <Navbar />
       <div className="mb-0 h-[79vh] overflow-auto pb-0 md:h-[82vh]">
         <iframe
-          data-tally-src="https://tally.so/r/w8Gg6o"
+          data-tally-src="https://tally.so/r/3xPrry"
           width="100%"
           height="100%"
           frameBorder="0"

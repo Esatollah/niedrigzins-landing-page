@@ -28,7 +28,7 @@ export default function Home() {
       <Navbar></Navbar>
       <div className="py-12 lg:py-12" />
       <section className="container relative mx-auto flex flex-col justify-center py-12">
-        <h1 className="w-full text-center text-5xl font-bold lg:w-4/5 lg:text-start lg:text-6xl lg:text-8xl">
+        <h1 className="w-full text-center text-5xl font-bold lg:w-4/5 lg:text-start md:text-6xl lg:text-8xl">
           Immobilien schneller vermitteln
         </h1>
         <div className="py-4" />
