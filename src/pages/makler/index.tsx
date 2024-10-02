@@ -227,8 +227,9 @@ export default function Home() {
         <h1 className="mx-auto mb-4 max-w-screen-lg text-center text-4xl font-semibold lg:text-8xl">
           Jetzt Immobilie über Niedrigzins inserieren
         </h1>
+        <div className="py-4" />
         <button
-          className="rounded bg-orange-600 px-8 py-2 text-3xl font-bold text-white hover:bg-orange-700"
+          className="rounded-2xl border-2 border-dashed border-black bg-orange-600 px-8 py-2 text-3xl font-semibold text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none md:text-4xl"
           onClick={() => (window.location.href = "/makler/registrieren")}
         >
           Jetzt inserieren
